@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Login = () => {
-  const [form, setForm] = useState({ email: '', password: '' });
+const Login = ({ history }) => {
+  const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', form);
-      localStorage.setItem('token', response.data.token);
-      alert('Login successful');
+      const response = await axios.post('http://localhost:5000/api/login', formData);
+      localStorage.setItem('token', response.data.accessToken);
+      history.push('/dashboard');
     } catch (error) {
-      console.error(error);
-      alert('Error logging in');
+      alert('Login failed!');
     }
   };
 

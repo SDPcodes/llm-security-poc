@@ -1,26 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Dashboard = () => {
-  const [profile, setProfile] = useState(null);
+function Dashboard() {
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const token = localStorage.getItem('token');
       try {
-        const response = await axios.get('http://localhost:5000/profile', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get('/api/profile');
         setProfile(response.data);
       } catch (error) {
-        console.error(error);
+        alert('Failed to fetch profile: ' + error.response.data.error);
       }
     };
-
     fetchProfile();
   }, []);
-
-  if (!profile) return <div>Loading...</div>;
 
   return (
     <div>
@@ -29,6 +23,6 @@ const Dashboard = () => {
       <p>Email: {profile.email}</p>
     </div>
   );
-};
+}
 
 export default Dashboard;
