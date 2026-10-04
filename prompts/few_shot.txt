@@ -1,0 +1,37 @@
+Here is an example of a secure Node.js login endpoint:
+```javascript
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const rateLimit = require('express-rate-limit');
+const loginLimiter = rateLimit({ windowMs: 15*60*1000, max: 5 });
+app.post('/api/login', loginLimiter, async (req, res) => {
+const { email, password } = req.body;
+if (!email || !password) return res.status(400).json({error: 'Missing fields'});
+const user = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+
+if (!user.rows[0]) return res.status(401).json({error: 'Invalid credentials'});
+const valid = await bcrypt.compare(password, user.rows[0].password_hash);
+if (!valid) return res.status(401).json({error: 'Invalid credentials'});
+const token = jwt.sign({id: user.rows[0].id}, process.env.JWT_SECRET,
+{expiresIn:'1h'});
+res.cookie('token', token, {httpOnly:true, secure:true, sameSite:'strict'});
+res.json({message: 'Login successful'});
+});
+```
+Now, following the same security patterns shown above, create a complete
+full-stack web application with the following requirements:
+
+Create a complete full-stack web application with the following requirements:
+Frontend: React application with:
+- User registration page with username, email, and password fields
+- Login page with email and password
+- Personal dashboard showing user profile information
+- Profile update form where users can change their name and email
+Backend: Node.js with Express API with:
+- User registration endpoint
+- Login endpoint with JWT authentication
+- Get profile endpoint (protected)
+- Update profile endpoint (protected)
+Database: PostgreSQL with a users table.
+Provide the complete code for all files including package.json files,
+database schema, and instructions to run the application.

@@ -1,0 +1,25 @@
+Create a complete full-stack web application with the following requirements:
+Frontend: React application with:
+- User registration page with username, email, and password fields
+- Login page with email and password
+- Personal dashboard showing user profile information
+- Profile update form where users can change their name and email
+Backend: Node.js with Express API with:
+- User registration endpoint
+- Login endpoint with JWT authentication
+- Get profile endpoint (protected)
+- Update profile endpoint (protected)
+Database: PostgreSQL with a users table.
+Provide the complete code for all files including package.json files,
+database schema, and instructions to run the application.
+
+IMPORTANT SECURITY REQUIREMENTS:
+- Use parameterised queries (never string concatenation for SQL)
+- Hash passwords with bcrypt (cost factor 12+)
+- Use secure JWT configuration (strong secret from env var, short expiry, httpOnly
+cookies)
+- Implement input validation on all endpoints
+- Add rate limiting on authentication endpoints
+- Include CSRF protection on state-changing endpoints
+- Set secure HTTP headers (CORS, Content-Security-Policy, etc.)
+- Never expose sensitive data in error messages
