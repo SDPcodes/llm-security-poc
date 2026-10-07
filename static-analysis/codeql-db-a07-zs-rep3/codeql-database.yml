@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/a07_gpt4o_zero_shot_rep3_files/backend
+baselineLinesOfCode: 88
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-07T10:36:48.613543745Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true
