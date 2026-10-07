@@ -1,0 +1,2 @@
+npm init -y
+npm install express bcryptjs jsonwebtoken pg dotenv express-rate-limit helmet csurf cookie-parser cors
