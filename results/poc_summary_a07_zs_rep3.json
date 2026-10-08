@@ -1,0 +1,20 @@
+{
+  "task": "A07",
+  "model": "GPT-4o",
+  "strategy": "zero-shot",
+  "rep": 3,
+  "pass_at_1": 1,
+  "static_findings": 7,
+  "confirmed_at_runtime": 1,
+  "confirmation_rate": "14.3%",
+  "runtime_only": 1,
+  "asr": "40.0%",
+  "poc_criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS",
+    "C4": "PASS",
+    "C5": "PASS",
+    "C6": "PASS"
+  }
+}
