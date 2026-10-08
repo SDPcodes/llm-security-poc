@@ -1,0 +1,14 @@
+[
+  {
+    "iter": 3,
+    "type": "XSS",
+    "cwe": "CWE-79",
+    "result": "SUCCESS"
+  },
+  {
+    "iter": 4,
+    "type": "CSRF",
+    "cwe": "CWE-352",
+    "result": "SUCCESS"
+  }
+]
