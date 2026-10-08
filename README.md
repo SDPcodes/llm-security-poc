@@ -126,27 +126,7 @@ weaknesses, which is the core argument for combining both in the methodology.
 
 ---
 
-## 5. Environment notes (artefacts, not security findings)
-
-Two issues encountered during execution were **tooling/infrastructure artefacts** and should not be
-recorded as properties of the generated code:
-
-1. **GitHub Codespaces Docker bridge networking** — container-to-container traffic on the Compose
-   network timed out (`ETIMEDOUT`) even on a freshly recreated network/daemon. Worked around by
-   running the backend **natively on the host** against the Dockerised Postgres via its published
-   port (which is also how the guide's Phase 2 runs the backend).
-2. **bcrypt native module under Alpine** — the prebuilt glibc binary segfaulted (exit 139) on
-   musl; fixed by building the backend image `FROM node:18` (Debian/glibc).
-
-The `manual_attacks.py` harness is also **contract-specific** (fixed endpoint paths, body field
-names and auth-header style). It was aligned to `zero_shot_rep3`'s actual contract (field
-`username`, raw `Authorization` header) so the five attacks exercise the real app; the attack logic
-and CWE coverage are unchanged. Per-sample contract differences are why static analysis + ZAP (both
-contract-agnostic) are the primary security measures.
-
----
-
-## 6. Reproduce / continue
+## 5. Reproduce / continue
 
 ```bash
 # in the Codespace, per sample:
