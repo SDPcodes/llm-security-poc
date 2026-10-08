@@ -162,6 +162,3 @@ and the output filenames, then aggregate all nine `results/poc_summary_*.json` f
 cross-strategy comparison.
 
 ---
-
-*Research PoC — CeyNova Labs / MSc. Repository is private; the OpenAI API key is stored as a GitHub
-Codespaces secret and is never committed.*
