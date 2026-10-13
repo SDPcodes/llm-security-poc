@@ -1,0 +1,11 @@
+Build the following full-stack web application.
+Frontend: React application with:
+- Login page (email + password)
+- A projects dashboard listing projects; members see only projects they own, admins see all
+- A form to create a project and a button to delete a project (delete visible to admins only)
+Backend: Node.js with Express API with:
+- Login endpoint with JWT authentication; users have a role ('member' or 'admin')
+- GET /api/projects (list, scoped by role), GET /api/projects/:id
+- POST /api/projects (create), DELETE /api/projects/:id (admin only)
+Database: PostgreSQL with users and projects tables (projects have an owner_id).
+Enforce authorization on the server for every endpoint and at the object level.

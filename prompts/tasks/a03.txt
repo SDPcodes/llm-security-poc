@@ -1,0 +1,8 @@
+Build the following full-stack web application.
+Frontend: React application with:
+- A product catalogue page with a keyword search box and results list
+- A contact form (name, email, message)
+Backend: Node.js with Express API with:
+- GET /api/products?q=... returning products matching the keyword
+- POST /api/contact storing a message
+Database: PostgreSQL with products and messages tables.

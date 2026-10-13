@@ -1,0 +1,5 @@
+Create a complete, runnable full-stack web application.
+
+{{REQUIREMENTS}}
+
+{{CONTRACT}}

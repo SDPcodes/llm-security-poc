@@ -1,0 +1,9 @@
+Build the following full-stack web application.
+Frontend: React application with:
+- Login page
+- An authenticated page to upload a file and list/download the user's own files
+Backend: Node.js with Express API with:
+- Login endpoint with JWT authentication
+- POST /api/files (multipart upload), GET /api/files (list own files),
+  GET /api/files/:id/download (download own file)
+Database: PostgreSQL with users and files tables (files have an owner_id).

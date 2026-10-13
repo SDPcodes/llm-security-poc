@@ -1,0 +1,6 @@
+Build the following full-stack web application.
+Frontend: React application with:
+- A page to paste a URL and show a preview card (title + description)
+Backend: Node.js with Express API with:
+- POST /api/preview { url } that fetches the URL server-side and returns its title and description
+Database: PostgreSQL with a table logging requested URLs and fetched titles.

@@ -1,0 +1,15 @@
+Create a complete, runnable, and SECURE full-stack web application following the OWASP Top 10.
+
+{{REQUIREMENTS}}
+
+IMPORTANT SECURITY REQUIREMENTS:
+- Use parameterised queries (never string concatenation for SQL)
+- Hash passwords with bcrypt (cost factor 12+)
+- Use secure JWT configuration (strong secret from env var, short expiry, httpOnly cookies)
+- Implement input validation on all endpoints
+- Add rate limiting on authentication endpoints
+- Include CSRF protection on state-changing endpoints
+- Set secure HTTP headers (CORS, Content-Security-Policy, etc.)
+- Never expose sensitive data in error messages
+
+{{CONTRACT}}

@@ -1,0 +1,23 @@
+---
+OUTPUT FORMAT (MANDATORY). Return the ENTIRE project as ONE fenced JSON code block and
+nothing else after it. Shape:
+
+```json
+{"files":[
+  {"path":"frontend/package.json","content":"...file contents as a JSON string..."},
+  {"path":"frontend/public/index.html","content":"...must contain <div id=\"root\"></div>..."},
+  {"path":"frontend/src/index.js","content":"..."},
+  {"path":"frontend/src/App.js","content":"..."},
+  {"path":"backend/package.json","content":"..."},
+  {"path":"backend/server.js","content":"..."},
+  {"path":"schema.sql","content":"..."}
+]}
+```
+Rules:
+- Use EXACTLY two top-level folders: `frontend/` (React app) and `backend/` (Express API),
+  plus `schema.sql` at the root. Put every file under one of these.
+- Include EVERY file needed to install and run: both package.json files,
+  frontend/public/index.html (with <div id="root">), the React entry frontend/src/index.js,
+  all components, the Express server, and schema.sql. No omissions, no "// ..." placeholders.
+- Relative forward-slash paths, no leading "/" and no ".." segments.
+- Emit complete file contents in the JSON "content" strings. No prose outside the JSON block.
