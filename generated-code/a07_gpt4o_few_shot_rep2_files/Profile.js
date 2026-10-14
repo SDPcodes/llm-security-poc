@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function Register() {
-  const [formData, setFormData] = useState({ username: '', email: '', password: '' });
+function Profile() {
+  const [formData, setFormData] = useState({ username: '', email: '' });
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await axios.get('/api/profile');
+        setFormData(response.data);
+      } catch (error) {
+        alert('Failed to fetch profile: ' + error.response.data.error);
+      }
+    };
+    fetchProfile();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -11,21 +23,20 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/register', formData);
-      alert('Registration successful!');
+      await axios.put('/api/profile', formData);
+      alert('Profile updated successfully!');
     } catch (error) {
-      alert('Registration failed: ' + error.response.data.error);
+      alert('Failed to update profile: ' + error.response.data.error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
-      <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-      <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-      <button type="submit">Register</button>
+      <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+      <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+      <button type="submit">Update Profile</button>
     </form>
   );
 }
 
-export default Register;
+export default Profile;

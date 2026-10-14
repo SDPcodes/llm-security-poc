@@ -1,0 +1,68 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 12,
+      "description": "Cross-Site Request Forgery (CSRF) protection is implemented using csurf middleware, but it relies on cookies. If the application is not properly configured to handle CSRF tokens, it may be vulnerable to CSRF attacks.",
+      "exploit": "An attacker could trick a user into making unwanted requests to the server by exploiting the CSRF vulnerability, potentially leading to unauthorized actions being performed on behalf of the user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 23,
+      "description": "The error message returned in the rate limiter middleware provides too much information to the client, which can be used by an attacker to infer the presence of rate limiting.",
+      "exploit": "An attacker could use the error message to determine the rate limit threshold and adjust their attack strategy accordingly.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 25,
+      "description": "The application does not properly sanitize user input in the search query, which could lead to reflected Cross-Site Scripting (XSS) if the server response is not properly encoded.",
+      "exploit": "An attacker could craft a malicious search query that includes JavaScript code, which would be executed in the victim's browser if the server response is not properly sanitized.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 6,
+      "description": "The application uses environment variables for configuration, but there is no indication of secure storage or handling of these secrets.",
+      "exploit": "An attacker with access to the server environment could potentially read sensitive information from environment variables, such as database credentials.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "The application lacks proper access control mechanisms for API endpoints, potentially allowing unauthorized users to access or modify resources.",
+      "exploit": "An attacker could access or modify resources by directly interacting with the API endpoints without proper authentication or authorization checks.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

@@ -1,20 +1,19 @@
 {
-  "name": "backend",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "Backend for the full-stack app",
-  "main": "server.js",
+  "description": "Frontend for the full-stack app",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
-    "csurf": "^1.11.0",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.1",
-    "express-rate-limit": "^6.0.0",
-    "helmet": "^5.0.0",
-    "jsonwebtoken": "^9.0.0",
-    "pg": "^8.7.1"
+    "axios": "^0.26.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "react-scripts": "^5.0.0"
   }
 }

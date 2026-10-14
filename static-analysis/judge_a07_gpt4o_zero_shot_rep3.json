@@ -1,0 +1,80 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/auth.js",
+      "line": 5,
+      "description": "JWT secret is retrieved from environment variables but not validated for presence or strength. If the secret is weak or missing, it can lead to token forgery.",
+      "exploit": "An attacker could forge a JWT token if they can guess or determine the secret.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 15,
+      "description": "CSRF protection is not implemented. The application is vulnerable to CSRF attacks as it relies solely on JWTs for authentication without additional CSRF tokens.",
+      "exploit": "An attacker could trick a user into making unwanted requests to the server by exploiting the user's authenticated session.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/routes.js",
+      "line": 31,
+      "description": "Detailed error messages are returned to the client, which may reveal sensitive information about the server or database.",
+      "exploit": "An attacker could use the error messages to gain insights into the database structure or server configuration.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-295",
+      "severity": "MEDIUM",
+      "file": "frontend/src/components/Dashboard.js",
+      "line": 12,
+      "description": "The application does not validate the SSL/TLS certificate of the server when making HTTP requests, which could lead to man-in-the-middle attacks.",
+      "exploit": "An attacker could intercept and modify the data being sent between the client and server.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "LOW",
+      "file": "frontend/src/components/Login.js",
+      "line": 16,
+      "description": "Sensitive data such as JWT tokens are stored in localStorage, which is accessible via JavaScript and can be vulnerable to XSS attacks.",
+      "exploit": "An attacker could exploit an XSS vulnerability to steal JWT tokens from localStorage.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "HIGH",
+      "file": "frontend/src/components/ProfileForm.js",
+      "line": 25,
+      "description": "The application does not sanitize user input before displaying it, making it vulnerable to reflected XSS attacks.",
+      "exploit": "An attacker could inject malicious scripts into the application, which would be executed in the context of other users' browsers.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-295",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-295",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

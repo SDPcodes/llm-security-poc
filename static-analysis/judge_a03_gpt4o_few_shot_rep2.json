@@ -1,0 +1,44 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 30,
+      "description": "The application does not implement any CSRF protection mechanism for the contact form submission.",
+      "exploit": "An attacker could trick a user into submitting a form on their behalf by hosting a malicious page that submits a request to '/api/contact' with the user's credentials.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 15,
+      "description": "The application logs errors to the console, which might expose sensitive information in a production environment.",
+      "exploit": "An attacker could exploit this by causing errors intentionally and then accessing logs to gather information about the system.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 5,
+      "description": "Sensitive information such as database connection strings is stored in environment variables, which is good practice, but if '.env' files are not properly secured, they can be exposed.",
+      "exploit": "If the '.env' file is accidentally committed to a public repository or if the server is misconfigured, an attacker could gain access to the database connection string.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

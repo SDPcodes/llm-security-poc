@@ -1,0 +1,90 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-311",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Sensitive data (JWT secret) is stored in environment variables, which might be exposed if not properly secured.",
+      "exploit": "An attacker with access to the environment variables can compromise the JWT secret, allowing them to forge tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 15,
+      "description": "CSRF protection is not implemented for state-changing requests, making the application vulnerable to CSRF attacks.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the server by exploiting the user's active session.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 39,
+      "description": "The application does not enforce HTTPS, which could lead to exposure of sensitive information over an insecure connection.",
+      "exploit": "An attacker could intercept and read sensitive data, such as authentication tokens, if the application is accessed over HTTP.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 49,
+      "description": "Improper access control in the '/api/projects' endpoint allows users to view projects they do not own if they are not an admin.",
+      "exploit": "A non-admin user can access projects that do not belong to them by manipulating the request.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-862",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 64,
+      "description": "Missing authorization check in the '/api/projects' POST endpoint allows any authenticated user to create projects without proper permissions.",
+      "exploit": "Any authenticated user can create projects, potentially leading to unauthorized data creation.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-862",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 70,
+      "description": "Missing authorization check in the '/api/projects/:id' DELETE endpoint allows any admin user to delete projects without verifying ownership.",
+      "exploit": "An admin user can delete any project, regardless of ownership, leading to potential data loss.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 39,
+      "description": "Error messages reveal sensitive information about the application's internal workings.",
+      "exploit": "An attacker can use detailed error messages to gain insights into the application's structure and potential vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-862"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-862"
+  ]
+}

@@ -1,0 +1,45 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/a01_gpt4o_zero_shot_rep1_files
+baselineLinesOfCode: 2
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+inProgress:
+  primaryLanguage: javascript
+  installedExtractors:
+    rust:
+     - /workspaces/llm-security-poc/.tooling/codeql/rust
+    javascript:
+     - /workspaces/llm-security-poc/.tooling/codeql/javascript
+    csv:
+     - /workspaces/llm-security-poc/.tooling/codeql/csv
+    actions:
+     - /workspaces/llm-security-poc/.tooling/codeql/actions
+    yaml:
+     - /workspaces/llm-security-poc/.tooling/codeql/yaml
+    cpp:
+     - /workspaces/llm-security-poc/.tooling/codeql/cpp
+    swift:
+     - /workspaces/llm-security-poc/.tooling/codeql/swift
+    python:
+     - /workspaces/llm-security-poc/.tooling/codeql/python
+    go:
+     - /workspaces/llm-security-poc/.tooling/codeql/go
+    properties:
+     - /workspaces/llm-security-poc/.tooling/codeql/properties
+    html:
+     - /workspaces/llm-security-poc/.tooling/codeql/html
+    xml:
+     - /workspaces/llm-security-poc/.tooling/codeql/xml
+    java:
+     - /workspaces/llm-security-poc/.tooling/codeql/java
+    ruby:
+     - /workspaces/llm-security-poc/.tooling/codeql/ruby
+    csharp:
+     - /workspaces/llm-security-poc/.tooling/codeql/csharp
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-14T11:03:09.883194281Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: false

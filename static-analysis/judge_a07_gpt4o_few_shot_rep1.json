@@ -1,0 +1,79 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-79",
+      "severity": "HIGH",
+      "file": "frontend/src/Dashboard.js",
+      "line": null,
+      "description": "Potential for reflected XSS due to direct insertion of user-controlled data into the DOM without sanitization.",
+      "exploit": "An attacker could manipulate the profile data to include malicious scripts that would execute in the victim's browser.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "backend/index.js",
+      "line": null,
+      "description": "CSRF vulnerability due to lack of CSRF protection on state-changing requests.",
+      "exploit": "An attacker could trick a user into making unwanted requests to change their profile information.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/index.js",
+      "line": null,
+      "description": "JWT secret is loaded from environment variables but not validated for strength or rotation.",
+      "exploit": "If the JWT secret is weak or leaked, an attacker could forge tokens to impersonate users.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "MEDIUM",
+      "file": "backend/index.js",
+      "line": null,
+      "description": "Potential for hardcoded secrets if environment variables are not properly managed.",
+      "exploit": "An attacker with access to the source code or environment could discover sensitive information.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-306",
+      "severity": "MEDIUM",
+      "file": "backend/index.js",
+      "line": null,
+      "description": "Lack of access control checks on the /api/profile endpoint for updating user information.",
+      "exploit": "An authenticated user could update another user's profile information if they manipulate the request.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-295",
+      "severity": "LOW",
+      "file": "backend/index.js",
+      "line": null,
+      "description": "Lack of HTTPS enforcement for secure cookie transmission.",
+      "exploit": "An attacker could intercept cookies over an insecure connection if HTTPS is not enforced.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-295",
+    "CWE-306",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-295",
+    "CWE-306",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

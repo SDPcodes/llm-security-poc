@@ -1,0 +1,96 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "Dashboard.js",
+      "line": 10,
+      "description": "The application does not implement CSRF protection for state-changing requests, such as the profile update.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the application by exploiting the lack of CSRF protection.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "Profile.js",
+      "line": 23,
+      "description": "The application does not implement CSRF protection for state-changing requests, such as the profile update.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the application by exploiting the lack of CSRF protection.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "MEDIUM",
+      "file": "index.js",
+      "line": 63,
+      "description": "Potential SQL Injection vulnerability due to direct use of user input in SQL query without sanitization.",
+      "exploit": "An attacker could manipulate the SQL query by injecting malicious SQL code through the 'email' parameter.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "MEDIUM",
+      "file": "index.js",
+      "line": 80,
+      "description": "Potential SQL Injection vulnerability due to direct use of user input in SQL query without sanitization.",
+      "exploit": "An attacker could manipulate the SQL query by injecting malicious SQL code through the 'id' parameter.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "index.js",
+      "line": null,
+      "description": "Hardcoded secret in the application code. The JWT secret should not be hardcoded and should be stored securely.",
+      "exploit": "An attacker with access to the source code can easily retrieve the JWT secret and forge tokens.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "index.js",
+      "line": 53,
+      "description": "The application does not enforce HTTPS for cookies, which could lead to session hijacking.",
+      "exploit": "An attacker could intercept cookies over an insecure connection and hijack user sessions.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "Dashboard.js",
+      "line": 15,
+      "description": "Potential information exposure through error messages that include server-side error details.",
+      "exploit": "An attacker could gain insights into the server's internal workings by analyzing error messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "Profile.js",
+      "line": 15,
+      "description": "Potential information exposure through error messages that include server-side error details.",
+      "exploit": "An attacker could gain insights into the server's internal workings by analyzing error messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

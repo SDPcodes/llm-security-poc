@@ -1,0 +1,38 @@
+{
+  "task": "a01",
+  "port": 3000,
+  "api_base": "/api",
+  "auth_header": "cookie",
+  "_needs_review": true,
+  "auth": {
+    "register": {
+      "path": "/register",
+      "body": [
+        "username",
+        "email",
+        "password"
+      ]
+    },
+    "login": {
+      "path": "/login",
+      "body": [
+        "email",
+        "password"
+      ],
+      "token_field": "token"
+    }
+  },
+  "a01": {
+    "resource": {
+      "list": "/projects",
+      "item": "/projects/{id}",
+      "create": "/projects",
+      "create_body": [
+        "name"
+      ],
+      "delete": "/projects/{id}",
+      "id_field": "id",
+      "admin_only_delete": true
+    }
+  }
+}

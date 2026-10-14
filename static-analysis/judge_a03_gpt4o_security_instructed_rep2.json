@@ -1,0 +1,44 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "frontend/src/App.js",
+      "line": 45,
+      "description": "The CSRF token is hardcoded as 'your-csrf-token' and not dynamically generated or validated, making the application vulnerable to CSRF attacks.",
+      "exploit": "An attacker can craft a malicious request to perform actions on behalf of an authenticated user without their consent.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 45,
+      "description": "Hardcoded placeholder for CSRF token in the frontend code. This should be replaced with a dynamically generated token.",
+      "exploit": "An attacker can exploit this by using the hardcoded token to bypass CSRF protections.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "The server logs errors to the console, which could potentially expose sensitive information if the logs are accessible to unauthorized users.",
+      "exploit": "An attacker with access to the logs could gain insights into the application's structure or find sensitive information.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-798"
+  ]
+}

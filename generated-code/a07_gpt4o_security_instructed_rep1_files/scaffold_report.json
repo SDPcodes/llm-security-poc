@@ -1,0 +1,38 @@
+{
+  "injected": [],
+  "flags": [
+    "frontend package.json invalid JSON: Expecting value: line 1 column 1 (char 0)",
+    "backend package.json invalid JSON: Expecting value: line 1 column 1 (char 0)"
+  ],
+  "missing_dependencies": {
+    "frontend": [
+      "bcryptjs",
+      "cookie-parser",
+      "cors",
+      "csurf",
+      "dotenv",
+      "express",
+      "express-rate-limit",
+      "express-validator",
+      "helmet",
+      "jsonwebtoken",
+      "pg"
+    ],
+    "backend": [
+      "bcryptjs",
+      "cookie-parser",
+      "cors",
+      "csurf",
+      "dotenv",
+      "express",
+      "express-rate-limit",
+      "express-validator",
+      "helmet",
+      "jsonwebtoken",
+      "pg"
+    ]
+  },
+  "contract_written": true,
+  "frontend_dir": "server",
+  "backend_dir": "server"
+}

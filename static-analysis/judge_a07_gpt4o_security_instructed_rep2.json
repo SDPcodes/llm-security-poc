@@ -1,0 +1,66 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/controllers.js",
+      "line": 30,
+      "description": "Hardcoded secret in JWT token generation. The secret should be stored securely and not hardcoded in the source code.",
+      "exploit": "An attacker could potentially gain access to the JWT secret and forge tokens.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/routes.js",
+      "line": 18,
+      "description": "CSRF protection is not applied to the login route. This could allow an attacker to perform actions on behalf of an authenticated user.",
+      "exploit": "An attacker could trick a user into visiting a malicious site that performs a login request on their behalf.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/controllers.js",
+      "line": 30,
+      "description": "JWT token is stored in a cookie without the Secure flag, making it vulnerable to theft over an unencrypted connection.",
+      "exploit": "An attacker on the same network could intercept the token if transmitted over HTTP.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "LOW",
+      "file": "backend/controllers.js",
+      "line": 10,
+      "description": "Potential SQL Injection vulnerability if the database library does not properly handle parameterized queries.",
+      "exploit": "If the database library is not secure, an attacker could inject SQL commands through the input fields.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-295",
+      "severity": "LOW",
+      "file": "frontend/src/components/Dashboard.js",
+      "line": 9,
+      "description": "No validation of SSL/TLS certificates when making requests to the backend.",
+      "exploit": "An attacker could perform a man-in-the-middle attack by intercepting the requests.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-295",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-295",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

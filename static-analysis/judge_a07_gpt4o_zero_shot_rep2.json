@@ -1,0 +1,79 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/authMiddleware.js",
+      "line": 6,
+      "description": "The application relies on environment variables for sensitive information like JWT_SECRET. If these are not properly secured, it could lead to unauthorized access.",
+      "exploit": "An attacker with access to the environment variables can use the JWT_SECRET to forge tokens and gain unauthorized access.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "MEDIUM",
+      "file": "backend/controllers/userController.js",
+      "line": 12,
+      "description": "The application uses parameterized queries, which is generally safe against SQL injection. However, if the database or ORM is misconfigured, it could still be vulnerable.",
+      "exploit": "An attacker could potentially exploit a misconfigured database or ORM to inject SQL commands.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/components/Dashboard.js",
+      "line": 19,
+      "description": "The application directly renders user data without escaping it, which could lead to stored XSS if user data is not properly sanitized before being stored in the database.",
+      "exploit": "An attacker could inject malicious scripts into the username or email fields, which would execute when viewed by another user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "frontend/src/components/ProfileUpdate.js",
+      "line": 36,
+      "description": "The application does not implement CSRF protection for state-changing requests like profile updates.",
+      "exploit": "An attacker could trick a user into submitting a form that changes their profile information without their consent.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-256",
+      "severity": "HIGH",
+      "file": "backend/models/userModel.js",
+      "line": 4,
+      "description": "The application loads environment variables using dotenv, which could expose sensitive information if the .env file is included in the source control.",
+      "exploit": "An attacker with access to the source control could obtain sensitive information like database credentials.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-295",
+      "severity": "MEDIUM",
+      "file": "frontend/src/components/Login.js",
+      "line": 17,
+      "description": "The application does not verify the SSL certificate of the backend server, which could lead to man-in-the-middle attacks.",
+      "exploit": "An attacker could intercept the communication between the frontend and backend to steal credentials or inject malicious responses.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-256",
+    "CWE-295",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-256",
+    "CWE-295",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

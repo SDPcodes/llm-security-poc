@@ -1,0 +1,59 @@
+{
+  "task": "a07",
+  "port": 5000,
+  "api_base": "",
+  "auth_header": "bearer",
+  "_needs_review": true,
+  "auth": {
+    "register": {
+      "path": "/register",
+      "body": [
+        "username",
+        "email",
+        "password"
+      ]
+    },
+    "login": {
+      "path": "/login",
+      "body": [
+        "email",
+        "password"
+      ],
+      "token_field": "token"
+    }
+  },
+  "a07": {
+    "profile": {
+      "path": "/profile",
+      "update_fields": [
+        "username",
+        "email"
+      ],
+      "id_from": "token"
+    }
+  },
+  "register": {
+    "path": "/register",
+    "body": [
+      "username",
+      "email",
+      "password"
+    ]
+  },
+  "login": {
+    "path": "/login",
+    "body": [
+      "email",
+      "password"
+    ],
+    "token_field": "token"
+  },
+  "profile": {
+    "path": "/profile",
+    "update_fields": [
+      "username",
+      "email"
+    ],
+    "id_from": "token"
+  }
+}

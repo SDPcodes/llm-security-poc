@@ -1,0 +1,67 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "client/src/components/UpdateProfile.js",
+      "line": null,
+      "description": "The UpdateProfile component does not include CSRF tokens in the form submission, making it vulnerable to Cross-Site Request Forgery (CSRF) attacks.",
+      "exploit": "An attacker could trick a user into visiting a malicious site that submits a form to the /api/profile endpoint, changing the user's profile information without their consent.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "server/user.js",
+      "line": 75,
+      "description": "The login endpoint sets the JWT token in a cookie with the 'secure' flag, but the application is configured to allow requests from 'http://localhost:3000', which is not a secure origin.",
+      "exploit": "An attacker could intercept the JWT token if the application is accessed over an insecure connection, potentially leading to session hijacking.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "server/auth.js",
+      "line": 7,
+      "description": "The JWT secret is loaded from an environment variable, but there is no verification that the environment variable is set, which could lead to the use of a default or weak secret.",
+      "exploit": "If the JWT secret is not properly configured, an attacker could forge JWT tokens, gaining unauthorized access to the application.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "server/user.js",
+      "line": 69,
+      "description": "The login endpoint returns a generic error message when login fails, which could leak information about the existence of user accounts.",
+      "exploit": "An attacker could use this information to enumerate valid email addresses by observing which requests return a 401 status versus a 400 status.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "LOW",
+      "file": "server/user.js",
+      "line": 75,
+      "description": "The JWT token is stored in a cookie with the 'httpOnly' flag, but there is no mention of the 'SameSite' attribute, which could lead to CSRF attacks.",
+      "exploit": "An attacker could exploit this by tricking the user into making requests that include the JWT token, potentially leading to unauthorized actions.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

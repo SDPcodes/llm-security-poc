@@ -1,0 +1,56 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 15,
+      "description": "Potential for reflected XSS due to unsanitized user input in search query.",
+      "exploit": "An attacker could craft a malicious search query that includes JavaScript code, which might be executed in the user's browser if the response is not properly sanitized.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Sensitive information such as database connection strings should not be hardcoded or stored in environment variables without proper security measures.",
+      "exploit": "If an attacker gains access to the environment variables, they could potentially access the database using the connection string.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-601",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 15,
+      "description": "Potential open redirect vulnerability if the search query is used in redirects without validation.",
+      "exploit": "An attacker could manipulate the search query to redirect users to a malicious site.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-20",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 28,
+      "description": "Missing input validation for the contact form fields.",
+      "exploit": "An attacker could submit unexpected data types or excessively large input, potentially causing application errors or denial of service.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-20",
+    "CWE-522",
+    "CWE-601",
+    "CWE-79"
+  ],
+  "cwes_reviewed": [
+    "CWE-20",
+    "CWE-522",
+    "CWE-601",
+    "CWE-79"
+  ]
+}

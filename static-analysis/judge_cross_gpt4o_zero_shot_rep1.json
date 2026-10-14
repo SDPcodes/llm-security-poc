@@ -1,0 +1,88 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 12,
+      "description": "Hardcoded secret key used for JWT signing.",
+      "exploit": "An attacker with access to the source code can use the hardcoded secret key to forge JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 38,
+      "description": "Lack of CSRF protection on file upload endpoint.",
+      "exploit": "An attacker can trick an authenticated user into uploading a file by making a request from a malicious site.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 48,
+      "description": "Lack of CSRF protection on file listing endpoint.",
+      "exploit": "An attacker can trick an authenticated user into listing files by making a request from a malicious site.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 58,
+      "description": "Lack of CSRF protection on file download endpoint.",
+      "exploit": "An attacker can trick an authenticated user into downloading a file by making a request from a malicious site.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 12,
+      "description": "Hardcoded database credentials.",
+      "exploit": "An attacker with access to the source code can use the hardcoded credentials to access the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "frontend/src/LoginPage.js",
+      "line": 16,
+      "description": "Sensitive data (JWT token) stored in local storage.",
+      "exploit": "An attacker with access to the browser can retrieve the JWT token from local storage.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 28,
+      "description": "Detailed error messages are logged to the console.",
+      "exploit": "An attacker can use error messages to gain insights into the application's structure and potential vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ]
+}

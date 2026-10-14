@@ -1,0 +1,67 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-79",
+      "severity": "HIGH",
+      "file": "frontend/src/App.js",
+      "line": null,
+      "description": "Potential for reflected XSS due to unsanitized user input in the search query.",
+      "exploit": "An attacker could craft a malicious query string that includes JavaScript code, which might be executed in the user's browser if not properly sanitized.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 21,
+      "description": "Potential SQL Injection vulnerability due to improper handling of user input in SQL query.",
+      "exploit": "An attacker could manipulate the 'q' parameter to alter the SQL query logic, potentially accessing unauthorized data.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 10,
+      "description": "Sensitive information such as database credentials are loaded from environment variables but could be exposed if not properly secured.",
+      "exploit": "If environment variables are not properly secured or are exposed in logs, an attacker could gain access to the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 34,
+      "description": "Lack of CSRF protection on the contact form submission endpoint.",
+      "exploit": "An attacker could trick a user into submitting a form request on their behalf, potentially sending unwanted messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 34,
+      "description": "Generic error message returned to the client, which could be used for information gathering.",
+      "exploit": "An attacker could use the error message to infer the presence of certain backend technologies or configurations.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

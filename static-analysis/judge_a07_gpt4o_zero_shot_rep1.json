@@ -1,0 +1,79 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "server.js",
+      "line": 15,
+      "description": "Hardcoded secret key used for JWT signing.",
+      "exploit": "An attacker with access to the source code can use the hardcoded secret to forge JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "server.js",
+      "line": null,
+      "description": "CSRF protection is missing for state-changing operations like profile updates.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the application, such as updating their profile, by exploiting the lack of CSRF protection.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "server.js",
+      "line": 10,
+      "description": "Database credentials are hardcoded in the source code.",
+      "exploit": "An attacker with access to the source code can use the hardcoded credentials to access the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "server.js",
+      "line": 48,
+      "description": "Detailed error messages are returned to the client.",
+      "exploit": "An attacker can gain insights into the server's internal workings by analyzing error messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "LOW",
+      "file": "server.js",
+      "line": 26,
+      "description": "Potential SQL Injection vulnerability if input validation is not properly handled.",
+      "exploit": "An attacker could potentially inject SQL commands if input validation is bypassed, although parameterized queries are used.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "LOW",
+      "file": "src/components/Dashboard.js",
+      "line": 22,
+      "description": "Potential XSS vulnerability if profile data is not properly sanitized before rendering.",
+      "exploit": "An attacker could inject malicious scripts into the profile data, which would be executed in the victim's browser.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-798",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-798"
+  ]
+}

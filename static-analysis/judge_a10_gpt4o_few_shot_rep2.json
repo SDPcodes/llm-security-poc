@@ -1,0 +1,55 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 14,
+      "description": "The application fetches URLs provided by the user without validation, which can lead to Server-Side Request Forgery (SSRF).",
+      "exploit": "An attacker can provide a URL pointing to an internal service or a sensitive endpoint, potentially accessing internal resources.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 17,
+      "description": "The application directly inserts user-provided data into the database without sanitization, which could lead to Cross-Site Scripting (XSS) if the data is later rendered in a web page.",
+      "exploit": "An attacker could submit a URL containing a malicious script in the title, which could be executed in the browser if the title is displayed on a web page.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 19,
+      "description": "The SQL query uses parameterized queries, which mitigates SQL injection risks. However, if other parts of the application use dynamic queries without parameterization, it could be vulnerable.",
+      "exploit": "No direct exploit in the provided code, but caution is advised if similar patterns are used elsewhere without parameterization.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "The application relies on environment variables for sensitive data like database connection strings, but there is no indication of secure storage or access control.",
+      "exploit": "If environment variables are exposed or improperly managed, an attacker could gain access to the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-522",
+    "CWE-79",
+    "CWE-89",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-522",
+    "CWE-79",
+    "CWE-918"
+  ]
+}

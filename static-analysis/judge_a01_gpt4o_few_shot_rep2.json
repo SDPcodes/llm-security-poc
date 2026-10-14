@@ -1,0 +1,77 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 10,
+      "description": "Sensitive information such as JWT secret is loaded from environment variables without validation or encryption.",
+      "exploit": "An attacker with access to the environment variables can retrieve the JWT secret and forge tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 23,
+      "description": "CSRF protection is not implemented for state-changing requests like login.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the application by exploiting the user's authenticated session.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 52,
+      "description": "Improper access control in the '/api/projects' endpoint allows users to view projects they do not own if they are not an admin.",
+      "exploit": "A non-admin user can potentially access projects they do not own by manipulating the request.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 66,
+      "description": "Improper access control in the '/api/projects/:id' endpoint allows users to delete projects without verifying ownership.",
+      "exploit": "An attacker can delete projects they do not own by sending a DELETE request with the project ID.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/Dashboard.js",
+      "line": 42,
+      "description": "Potential XSS vulnerability if project names are not properly sanitized before rendering.",
+      "exploit": "An attacker can inject malicious scripts into project names, which will execute when viewed by other users.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 10,
+      "description": "Hardcoded secrets are not present, but reliance on environment variables without validation can lead to insecure configurations.",
+      "exploit": "If environment variables are not properly set, the application may use default or insecure values.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    }
+  ],
+  "cwes": [
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

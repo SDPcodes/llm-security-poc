@@ -1,0 +1,88 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-89",
+      "severity": "HIGH",
+      "file": "server.js",
+      "line": 39,
+      "description": "Potential SQL Injection vulnerability due to direct use of user input in SQL query without proper parameterization.",
+      "exploit": "An attacker could manipulate the 'email' field in the login request to execute arbitrary SQL commands.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "HIGH",
+      "file": "server.js",
+      "line": 64,
+      "description": "Potential SQL Injection vulnerability due to direct use of user input in SQL query without proper parameterization.",
+      "exploit": "An attacker could manipulate the 'username' or 'email' fields in the profile update request to execute arbitrary SQL commands.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "CRITICAL",
+      "file": "server.js",
+      "line": null,
+      "description": "Hardcoded database credentials in the source code.",
+      "exploit": "An attacker with access to the source code could use these credentials to access the database.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "server.js",
+      "line": 52,
+      "description": "JWT token is signed using a secret that is loaded from an environment variable, but if the environment variable is not properly secured, it could lead to token forgery.",
+      "exploit": "If an attacker gains access to the JWT secret, they can forge tokens and impersonate users.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "Login.js",
+      "line": 12,
+      "description": "Sensitive data (password) is sent over an unencrypted connection (HTTP).",
+      "exploit": "An attacker could intercept the network traffic and capture the password.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "server.js",
+      "line": 52,
+      "description": "The application is vulnerable to Cross-Site Request Forgery (CSRF) because it relies solely on cookies for authentication without CSRF tokens.",
+      "exploit": "An attacker could trick a user into making unwanted requests to the server by exploiting the user's authenticated session.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "Login.js",
+      "line": 15,
+      "description": "Error message reveals sensitive information about the server's internal workings.",
+      "exploit": "An attacker could use the error message to gain insights into the server's configuration and potentially exploit other vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

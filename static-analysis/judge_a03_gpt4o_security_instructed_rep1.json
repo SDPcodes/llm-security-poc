@@ -1,0 +1,44 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "frontend/src/App.js",
+      "line": 30,
+      "description": "The application does not include CSRF tokens in the POST request to '/api/contact'. This makes it vulnerable to Cross-Site Request Forgery (CSRF) attacks.",
+      "exploit": "An attacker can create a malicious website that sends a POST request to '/api/contact' on behalf of an authenticated user, potentially submitting unwanted data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 6,
+      "description": "The application uses environment variables for configuration but does not ensure that sensitive data like database credentials are not hardcoded or improperly managed.",
+      "exploit": "If environment variables are not properly secured, an attacker with access to the server environment could retrieve sensitive information such as database credentials.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 25,
+      "description": "The server logs errors to the console, which may expose sensitive information if the logs are not properly managed.",
+      "exploit": "An attacker with access to the server logs could gain insights into the application's internal workings or sensitive data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

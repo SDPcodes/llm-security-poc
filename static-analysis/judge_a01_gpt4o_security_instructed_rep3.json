@@ -1,0 +1,56 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Hardcoded secret in the environment variable JWT_SECRET is used for signing JWT tokens. If this secret is not properly secured, it can lead to token forgery.",
+      "exploit": "An attacker with access to the environment variables can forge JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "CSRF protection is implemented using csurf middleware, but the CSRF token is not properly handled in the frontend. The token is hardcoded in the frontend code.",
+      "exploit": "An attacker can perform CSRF attacks if they can predict or obtain the CSRF token.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Improper access control in the /api/projects endpoint allows any authenticated user to view all projects if they are an admin, but there is no verification of the user's role in the frontend.",
+      "exploit": "An attacker can modify the frontend code to change their role and access unauthorized data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "frontend/src/App.js",
+      "line": null,
+      "description": "The role state in the frontend is hardcoded to 'member', which could lead to incorrect assumptions about user permissions.",
+      "exploit": "An attacker can modify the frontend code to change their role and potentially access unauthorized functionality.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

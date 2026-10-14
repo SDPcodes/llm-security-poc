@@ -1,0 +1,65 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 38,
+      "description": "The login endpoint does not implement CSRF protection, allowing attackers to perform CSRF attacks by tricking users into making unwanted requests.",
+      "exploit": "An attacker could create a malicious website that sends a POST request to the /api/login endpoint with the victim's credentials, logging them in without their consent.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 7,
+      "description": "The application uses environment variables for sensitive information like DATABASE_URL and JWT_SECRET, but these are not securely managed within the codebase.",
+      "exploit": "If the environment variables are exposed or improperly managed, an attacker could gain access to the database or forge JWT tokens.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 55,
+      "description": "The access control for fetching projects is based on the user's role, but the role is stored in the JWT token, which could be tampered with if the secret is compromised.",
+      "exploit": "An attacker with access to the JWT secret could modify their token to escalate privileges and access all projects.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 72,
+      "description": "The delete project functionality relies on the user's role being 'admin', but this is enforced only on the client-side in App.js, which can be bypassed.",
+      "exploit": "An attacker could modify the client-side code or use a tool like Postman to send a DELETE request to /api/projects/:id without being an admin.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-862",
+      "severity": "HIGH",
+      "file": "frontend/src/App.js",
+      "line": 28,
+      "description": "The client-side role management is insecure as it relies on a hardcoded role value, which can be easily manipulated.",
+      "exploit": "An attacker could modify the role variable in the browser's developer tools to 'admin' and gain unauthorized access to admin functionalities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-285",
+    "CWE-352",
+    "CWE-798",
+    "CWE-862"
+  ],
+  "cwes_reviewed": [
+    "CWE-285",
+    "CWE-352",
+    "CWE-862"
+  ]
+}

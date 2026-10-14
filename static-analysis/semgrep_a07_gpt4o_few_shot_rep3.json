@@ -1,0 +1,206 @@
+{
+  "version": "1.179.0",
+  "results": [
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.express.security.audit.express-check-csurf-middleware-usage",
+      "path": "server.js",
+      "start": {
+        "line": 10,
+        "col": 7,
+        "offset": 300
+      },
+      "end": {
+        "line": 10,
+        "col": 22,
+        "offset": 315
+      },
+      "extra": {
+        "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+        "metadata": {
+          "category": "security",
+          "references": [
+            "https://www.npmjs.com/package/csurf",
+            "https://www.npmjs.com/package/csrf",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+          ],
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "technology": [
+            "javascript",
+            "typescript",
+            "express"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW"
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "ProfileUpdate.js",
+            "start": {
+              "line": 1,
+              "col": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "col": 3,
+              "offset": 2
+            }
+          },
+          {
+            "path": "ProfileUpdate.js",
+            "start": {
+              "line": 2,
+              "col": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "col": 5,
+              "offset": 4
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line ProfileUpdate.js:1:\n `cd` was unexpected",
+      "path": "ProfileUpdate.js",
+      "spans": [
+        {
+          "file": "ProfileUpdate.js",
+          "start": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "col": 3,
+            "offset": 2
+          }
+        },
+        {
+          "file": "ProfileUpdate.js",
+          "start": {
+            "line": 2,
+            "col": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 2,
+            "col": 5,
+            "offset": 4
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".env",
+      "Login.js",
+      "ProfileUpdate.js",
+      "contract.json",
+      "scaffold_report.json",
+      "schema.sql",
+      "server.js"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.8358590602874756,
+    "profiling_times": {
+      "config_time": 47.84940433502197,
+      "core_time": 36.85336875915527,
+      "ignores_time": 0.0005981922149658203,
+      "total_time": 84.74875330924988
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.901968240737915,
+      "per_file_time": {
+        "mean": 0.0901968240737915,
+        "std_dev": 0.033994544984835215
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9361702127659575,
+      "rules_selected_ratio": 0.08897485493230174,
+      "rules_matched_ratio": 0.08897485493230174
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 225132608
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

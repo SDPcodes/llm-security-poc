@@ -1,0 +1,79 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 6,
+      "description": "Hardcoded secret key used for JWT signing.",
+      "exploit": "An attacker with access to the source code can use the hardcoded secret key to forge JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 6,
+      "description": "Hardcoded database credentials in the source code.",
+      "exploit": "An attacker with access to the source code can use the hardcoded credentials to access the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "No CSRF protection implemented for state-changing requests.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the server by exploiting the user's authenticated session.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 33,
+      "description": "Improper access control for project deletion. Only role is checked, not ownership.",
+      "exploit": "A user with 'admin' role can delete any project, potentially leading to unauthorized data deletion.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 31,
+      "description": "Exposing user role in the response of /api/projects endpoint.",
+      "exploit": "An attacker can learn about user roles by intercepting the API response.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 24,
+      "description": "Potential SQL Injection risk if query parameters are not properly sanitized.",
+      "exploit": "If the input is not properly sanitized, an attacker could inject SQL commands.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "version": "1.179.0",
+  "results": [
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.correctness.useless-assignment",
+      "path": "backend/server.js",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 209
+      },
+      "end": {
+        "line": 8,
+        "col": 71,
+        "offset": 311
+      },
+      "extra": {
+        "message": "`const` is assigned twice; the first assignment is useless",
+        "metadata": {
+          "category": "correctness",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "frontend/src/App.js",
+      "start": {
+        "line": 22,
+        "col": 7,
+        "offset": 613
+      },
+      "end": {
+        "line": 22,
+        "col": 41,
+        "offset": 647
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".env",
+      "backend/package.json",
+      "backend/server.js",
+      "contract.json",
+      "frontend/package.json",
+      "frontend/public/index.html",
+      "frontend/src/App.js",
+      "frontend/src/index.js",
+      "scaffold_report.json",
+      "schema.sql"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.8265697956085205,
+    "profiling_times": {
+      "config_time": 47.919366121292114,
+      "core_time": 24.291603803634644,
+      "ignores_time": 0.0005648136138916016,
+      "total_time": 72.2743489742279
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 1.5116307735443115,
+      "per_file_time": {
+        "mean": 0.10797362668173656,
+        "std_dev": 0.062093740859326396
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9372623574144486,
+      "rules_selected_ratio": 0.10266159695817491,
+      "rules_matched_ratio": 0.10266159695817491
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 236943616
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

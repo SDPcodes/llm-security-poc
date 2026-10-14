@@ -1,0 +1,42 @@
+```json
+{
+  "files": [
+    {
+      "path": "frontend/package.json",
+      "content": "{\n  \"name\": \"frontend\",\n  \"version\": \"1.0.0\",\n  \"main\": \"index.js\",\n  \"dependencies\": {\n    \"axios\": \"^0.21.1\",\n    \"react\": \"^17.0.2\",\n    \"react-dom\": \"^17.0.2\",\n    \"react-router-dom\": \"^5.2.0\"\n  },\n  \"scripts\": {\n    \"start\": \"react-scripts start\",\n    \"build\": \"react-scripts build\"\n  }\n}"
+    },
+    {
+      "path": "frontend/public/index.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Projects Dashboard</title>\n</head>\n<body>\n    <div id=\"root\"></div>\n</body>\n</html>"
+    },
+    {
+      "path": "frontend/src/index.js",
+      "content": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport { BrowserRouter as Router } from 'react-router-dom';\nimport App from './App';\n\nReactDOM.render(\n  <React.StrictMode>\n    <Router>\n      <App />\n    </Router>\n  </React.StrictMode>,\n  document.getElementById('root')\n);"
+    },
+    {
+      "path": "frontend/src/App.js",
+      "content": "import React, { useState, useEffect } from 'react';\nimport { Route, Switch, useHistory } from 'react-router-dom';\nimport axios from 'axios';\nimport LoginPage from './components/LoginPage';\nimport ProjectsDashboard from './components/ProjectsDashboard';\n\nfunction App() {\n  const [user, setUser] = useState(null);\n  const history = useHistory();\n\n  useEffect(() => {\n    const token = localStorage.getItem('token');\n    if (token) {\n      axios.get('/api/auth/me', { headers: { Authorization: `Bearer ${token}` } })\n        .then(response => setUser(response.data))\n        .catch(() => localStorage.removeItem('token'));\n    }\n  }, []);\n\n  const handleLogin = (email, password) => {\n    axios.post('/api/auth/login', { email, password })\n      .then(response => {\n        localStorage.setItem('token', response.data.token);\n        setUser(response.data.user);\n        history.push('/projects');\n      })\n      .catch(error => console.error('Login failed', error));\n  };\n\n  return (\n    <div>\n      <Switch>\n        <Route path=\"/login\">\n          <LoginPage onLogin={handleLogin} />\n        </Route>\n        <Route path=\"/projects\">\n          <ProjectsDashboard user={user} />\n        </Route>\n      </Switch>\n    </div>\n  );\n}\n\nexport default App;"
+    },
+    {
+      "path": "frontend/src/components/LoginPage.js",
+      "content": "import React, { useState } from 'react';\n\nfunction LoginPage({ onLogin }) {\n  const [email, setEmail] = useState('');\n  const [password, setPassword] = useState('');\n\n  const handleSubmit = (event) => {\n    event.preventDefault();\n    onLogin(email, password);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <div>\n        <label>Email:</label>\n        <input type=\"email\" value={email} onChange={(e) => setEmail(e.target.value)} />\n      </div>\n      <div>\n        <label>Password:</label>\n        <input type=\"password\" value={password} onChange={(e) => setPassword(e.target.value)} />\n      </div>\n      <button type=\"submit\">Login</button>\n    </form>\n  );\n}\n\nexport default LoginPage;"
+    },
+    {
+      "path": "frontend/src/components/ProjectsDashboard.js",
+      "content": "import React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nfunction ProjectsDashboard({ user }) {\n  const [projects, setProjects] = useState([]);\n\n  useEffect(() => {\n    if (user) {\n      const token = localStorage.getItem('token');\n      axios.get('/api/projects', { headers: { Authorization: `Bearer ${token}` } })\n        .then(response => setProjects(response.data))\n        .catch(error => console.error('Error fetching projects', error));\n    }\n  }, [user]);\n\n  const handleDelete = (projectId) => {\n    const token = localStorage.getItem('token');\n    axios.delete(`/api/projects/${projectId}`, { headers: { Authorization: `Bearer ${token}` } })\n      .then(() => setProjects(projects.filter(project => project.id !== projectId)))\n      .catch(error => console.error('Error deleting project', error));\n  };\n\n  return (\n    <div>\n      <h1>Projects Dashboard</h1>\n      <ul>\n        {projects.map(project => (\n          <li key={project.id}>\n            {project.name}\n            {user.role === 'admin' && <button onClick={() => handleDelete(project.id)}>Delete</button>}\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n\nexport default ProjectsDashboard;"
+    },
+    {
+      "path": "backend/package.json",
+      "content": "{\n  \"name\": \"backend\",\n  \"version\": \"1.0.0\",\n  \"main\": \"server.js\",\n  \"dependencies\": {\n    \"bcryptjs\": \"^2.4.3\",\n    \"body-parser\": \"^1.19.0\",\n    \"cors\": \"^2.8.5\",\n    \"dotenv\": \"^8.2.0\",\n    \"express\": \"^4.17.1\",\n    \"jsonwebtoken\": \"^8.5.1\",\n    \"pg\": \"^8.5.1\"\n  },\n  \"scripts\": {\n    \"start\": \"node server.js\"\n  }\n}"
+    },
+    {
+      "path": "backend/server.js",
+      "content": "require('dotenv').config();\nconst express = require('express');\nconst bodyParser = require('body-parser');\nconst jwt = require('jsonwebtoken');\nconst bcrypt = require('bcryptjs');\nconst cors = require('cors');\nconst { Pool } = require('pg');\n\nconst app = express();\nconst pool = new Pool();\n\napp.use(cors());\napp.use(bodyParser.json());\n\nconst authenticateToken = (req, res, next) => {\n  const authHeader = req.headers['authorization'];\n  const token = authHeader && authHeader.split(' ')[1];\n  if (token == null) return res.sendStatus(401);\n\n  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {\n    if (err) return res.sendStatus(403);\n    req.user = user;\n    next();\n  });\n};\n\napp.post('/api/auth/login', async (req, res) => {\n  const { email, password } = req.body;\n  const userResult = await pool.query('SELECT * FROM users WHERE email = $1', [email]);\n  const user = userResult.rows[0];\n\n  if (user && bcrypt.compareSync(password, user.password)) {\n    const token = jwt.sign({ userId: user.id, role: user.role }, process.env.ACCESS_TOKEN_SECRET);\n    res.json({ token, user: { id: user.id, role: user.role } });\n  } else {\n    res.status(401).send('Email or password incorrect');\n  }\n});\n\napp.get('/api/auth/me', authenticateToken, async (req, res) => {\n  const userResult = await pool.query('SELECT id, role FROM users WHERE id = $1', [req.user.userId]);\n  const user = userResult.rows[0];\n  res.json(user);\n});\n\napp.get('/api/projects', authenticateToken, async (req, res) => {\n  let projects;\n  if (req.user.role === 'admin') {\n    const result = await pool.query('SELECT * FROM projects');\n    projects = result.rows;\n  } else {\n    const result = await pool.query('SELECT * FROM projects WHERE owner_id = $1', [req.user.userId]);\n    projects = result.rows;\n  }\n  res.json(projects);\n});\n\napp.post('/api/projects', authenticateToken, async (req, res) => {\n  const { name } = req.body;\n  const result = await pool.query(\n    'INSERT INTO projects (name, owner_id) VALUES ($1, $2) RETURNING *',\n    [name, req.user.userId]\n  );\n  res.status(201).json(result.rows[0]);\n});\n\napp.delete('/api/projects/:id', authenticateToken, async (req, res) => {\n  if (req.user.role !== 'admin') return res.sendStatus(403);\n  const projectId = parseInt(req.params.id);\n  await pool.query('DELETE FROM projects WHERE id = $1', [projectId]);\n  res.sendStatus(204);\n});\n\nconst PORT = process.env.PORT || 3001;\napp.listen(PORT, () => {\n  console.log(`Server is running on port ${PORT}`);\n});"
+    },
+    {
+      "path": "schema.sql",
+      "content": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE NOT NULL,\n  password VARCHAR(255) NOT NULL,\n  role VARCHAR(50) NOT NULL\n);\n\nCREATE TABLE projects (\n  id SERIAL PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  owner_id INTEGER REFERENCES users(id)\n);\n\n-- Sample data\nINSERT INTO users (email, password, role) VALUES ('admin@example.com', '$2a$10$e0MYzXyjpJS7Pd0RVvHwHeFX8G1VfT1u3xq2Wz2uAO3v6FZ4zQXhG', 'admin');\nINSERT INTO users (email, password, role) VALUES ('member@example.com', '$2a$10$e0MYzXyjpJS7Pd0RVvHwHeFX8G1VfT1u3xq2Wz2uAO3v6FZ4zQXhG', 'member');\nINSERT INTO projects (name, owner_id) VALUES ('Project 1', 2);\nINSERT INTO projects (name, owner_id) VALUES ('Project 2', 2);"
+    }
+  ]
+}
+```

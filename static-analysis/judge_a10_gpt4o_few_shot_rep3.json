@@ -1,0 +1,56 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 18,
+      "description": "The application does not implement any CSRF protection mechanism for the '/api/preview' endpoint, which could allow attackers to perform actions on behalf of authenticated users without their consent.",
+      "exploit": "An attacker could craft a malicious webpage that makes a POST request to '/api/preview' with a URL, causing the server to fetch and log the URL without the user's knowledge.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 18,
+      "description": "The application fetches URLs provided by users without validation, leading to a potential Server-Side Request Forgery (SSRF) vulnerability. This could allow attackers to make requests to internal services or external services on behalf of the server.",
+      "exploit": "An attacker could submit a URL pointing to an internal service (e.g., 'http://localhost:8080/admin') or an external service to perform unauthorized actions or exfiltrate data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 27,
+      "description": "The application directly inserts user-controlled data (URL preview title and description) into the DOM without proper sanitization, which could lead to a Cross-Site Scripting (XSS) vulnerability.",
+      "exploit": "If an attacker can control the content of the URL being previewed, they could inject malicious scripts into the title or description, which would execute in the context of the user's browser when they view the preview.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 28,
+      "description": "The application logs errors to the console, which could potentially expose sensitive information about the server environment or the nature of the error.",
+      "exploit": "An attacker could trigger an error condition and analyze the server's console output to gain insights into the server's configuration or vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-79",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-79",
+    "CWE-918"
+  ]
+}

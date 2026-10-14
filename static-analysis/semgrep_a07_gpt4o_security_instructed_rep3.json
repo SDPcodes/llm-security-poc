@@ -1,0 +1,325 @@
+{
+  "version": "1.179.0",
+  "results": [
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Dashboard.js",
+      "start": {
+        "line": 13,
+        "col": 9,
+        "offset": 393
+      },
+      "end": {
+        "line": 13,
+        "col": 40,
+        "offset": 424
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Login.js",
+      "start": {
+        "line": 15,
+        "col": 7,
+        "offset": 452
+      },
+      "end": {
+        "line": 15,
+        "col": 32,
+        "offset": 477
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Login.js",
+      "start": {
+        "line": 17,
+        "col": 7,
+        "offset": 505
+      },
+      "end": {
+        "line": 17,
+        "col": 32,
+        "offset": 530
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Profile.js",
+      "start": {
+        "line": 13,
+        "col": 9,
+        "offset": 419
+      },
+      "end": {
+        "line": 13,
+        "col": 40,
+        "offset": 450
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Profile.js",
+      "start": {
+        "line": 27,
+        "col": 7,
+        "offset": 774
+      },
+      "end": {
+        "line": 27,
+        "col": 31,
+        "offset": 798
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Profile.js",
+      "start": {
+        "line": 29,
+        "col": 7,
+        "offset": 826
+      },
+      "end": {
+        "line": 29,
+        "col": 38,
+        "offset": 857
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Register.js",
+      "start": {
+        "line": 15,
+        "col": 7,
+        "offset": 445
+      },
+      "end": {
+        "line": 15,
+        "col": 39,
+        "offset": 477
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "Register.js",
+      "start": {
+        "line": 17,
+        "col": 7,
+        "offset": 505
+      },
+      "end": {
+        "line": 17,
+        "col": 33,
+        "offset": 531
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".env",
+      "Dashboard.js",
+      "Login.js",
+      "Profile.js",
+      "Register.js",
+      "contract.json",
+      "package.json",
+      "public/index.html",
+      "scaffold_report.json",
+      "schema.sql",
+      "server.js",
+      "src/App.js",
+      "src/index.js"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 1.139503002166748,
+    "profiling_times": {
+      "config_time": 32.902732849121094,
+      "core_time": 19.90731167793274,
+      "ignores_time": 0.0011970996856689453,
+      "total_time": 53.00729465484619
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 2.891038417816162,
+      "per_file_time": {
+        "mean": 0.1376684960864839,
+        "std_dev": 0.1701267016337441
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.666251576997127,
+        "count_ratio": 0.047619047619047616
+      },
+      "very_slow_files": [
+        {
+          "fpath": "server.js",
+          "ftime": 1.9261589050292969
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9363110008271298,
+      "rules_selected_ratio": 0.0827129859387924,
+      "rules_matched_ratio": 0.0827129859387924
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 246255808
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

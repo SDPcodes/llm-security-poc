@@ -1,0 +1,123 @@
+{
+  "version": "1.179.0",
+  "results": [
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "frontend/src/components/LoginPage.js",
+      "start": {
+        "line": 17,
+        "col": 7,
+        "offset": 532
+      },
+      "end": {
+        "line": 17,
+        "col": 29,
+        "offset": 554
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".env",
+      "backend/package.json",
+      "backend/server.js",
+      "contract.json",
+      "frontend/package.json",
+      "frontend/public/index.html",
+      "frontend/src/App.js",
+      "frontend/src/components/Dashboard.js",
+      "frontend/src/components/LoginPage.js",
+      "frontend/src/index.js",
+      "scaffold_report.json",
+      "schema.sql"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.8224210739135742,
+    "profiling_times": {
+      "config_time": 78.73044776916504,
+      "core_time": 12.356976747512817,
+      "ignores_time": 0.0006406307220458984,
+      "total_time": 91.16085767745972
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 1.7361676692962646,
+      "per_file_time": {
+        "mean": 0.09645375940534806,
+        "std_dev": 0.053514011347015306
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9366359447004609,
+      "rules_selected_ratio": 0.09101382488479262,
+      "rules_matched_ratio": 0.09101382488479262
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 239271040
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

@@ -1,0 +1,90 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-89",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 37,
+      "description": "Potential SQL Injection vulnerability due to dynamic query construction without parameterized inputs.",
+      "exploit": "An attacker with a valid JWT could manipulate the 'owner_id' parameter to access unauthorized project data.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-256",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Hardcoded secret in the codebase, which can be exploited if the code is leaked.",
+      "exploit": "If the '.env' file is not properly secured, an attacker could gain access to the JWT secret and forge tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": null,
+      "description": "Lack of CSRF protection for state-changing requests.",
+      "exploit": "An attacker could trick an authenticated user into making unwanted requests by exploiting the absence of CSRF tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 12,
+      "description": "Missing HTTPS enforcement, which could lead to sensitive data exposure over unencrypted connections.",
+      "exploit": "An attacker could intercept unencrypted traffic to steal sensitive information such as JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 29,
+      "description": "Improper access control in '/api/projects' endpoint, allowing non-admin users to access all projects.",
+      "exploit": "A non-admin user could modify the request to access all projects by changing their role to 'admin' in the token.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Use of a hardcoded secret for JWT signing.",
+      "exploit": "If the secret is discovered, an attacker could forge valid JWT tokens to impersonate users.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 37,
+      "description": "Information exposure through error messages.",
+      "exploit": "An attacker could gain insights into the database structure or other sensitive information through detailed error messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-256",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-256",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

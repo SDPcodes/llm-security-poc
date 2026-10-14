@@ -1,0 +1,55 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-89",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 20,
+      "description": "Potential SQL Injection vulnerability due to improper handling of user input in SQL query.",
+      "exploit": "An attacker could manipulate the 'q' query parameter to execute arbitrary SQL commands.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 12,
+      "description": "Hardcoded database credentials in the source code.",
+      "exploit": "An attacker with access to the source code could use these credentials to access the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Lack of CSRF protection on the /api/contact endpoint.",
+      "exploit": "An attacker could trick a user into submitting a form that sends a request to this endpoint, potentially sending unwanted messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": null,
+      "description": "Potential for reflected XSS if the server does not properly sanitize the 'q' parameter in the response.",
+      "exploit": "An attacker could craft a URL with a malicious script in the 'q' parameter, which could be executed in the victim's browser.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-89"
+  ],
+  "cwes_reviewed": [
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

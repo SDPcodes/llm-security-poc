@@ -1,0 +1,56 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 13,
+      "description": "Hardcoded database credentials in the source code.",
+      "exploit": "An attacker with access to the source code can extract the database credentials and potentially gain unauthorized access to the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Lack of CSRF protection on the '/api/contact' endpoint.",
+      "exploit": "An attacker can trick a logged-in user into submitting a form to the '/api/contact' endpoint, potentially sending unwanted messages.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 12,
+      "description": "Potential reflected XSS vulnerability due to direct insertion of user input into the DOM without sanitization.",
+      "exploit": "An attacker can craft a malicious search query that includes JavaScript code, which could be executed in the user's browser when the search results are displayed.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 27,
+      "description": "Generic error message returned to the client on database errors.",
+      "exploit": "An attacker can use the error message to infer the existence of certain database operations or tables, aiding in further attacks.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

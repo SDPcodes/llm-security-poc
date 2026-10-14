@@ -1,0 +1,21 @@
+{
+  "task": "a03",
+  "port": 3001,
+  "api_base": "/api",
+  "auth_header": "raw",
+  "_needs_review": true,
+  "a03": {
+    "search": {
+      "path": "/products",
+      "param": "q"
+    },
+    "contact": {
+      "path": "/contact",
+      "body": [
+        "name",
+        "email",
+        "message"
+      ]
+    }
+  }
+}

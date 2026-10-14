@@ -1,0 +1,23 @@
+{
+  "injected": [],
+  "flags": [
+    "no frontend detected (no src/App.* or package.json)"
+  ],
+  "missing_dependencies": {
+    "backend": [
+      "axios",
+      "bcrypt",
+      "cookie-parser",
+      "cors",
+      "dotenv",
+      "express",
+      "express-rate-limit",
+      "jsonwebtoken",
+      "pg",
+      "react"
+    ]
+  },
+  "contract_written": true,
+  "frontend_dir": ".",
+  "backend_dir": "."
+}

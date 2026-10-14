@@ -1,0 +1,18 @@
+{
+  "injected": [],
+  "flags": [],
+  "missing_dependencies": {
+    "backend": [
+      "cors",
+      "dotenv",
+      "express",
+      "express-rate-limit",
+      "pg",
+      "react",
+      "react-dom"
+    ]
+  },
+  "contract_written": true,
+  "frontend_dir": "frontend",
+  "backend_dir": "."
+}

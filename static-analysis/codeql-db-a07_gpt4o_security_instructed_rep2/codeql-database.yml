@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/a07_gpt4o_security_instructed_rep2_files
+baselineLinesOfCode: 363
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-14T11:34:13.775497545Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true

@@ -1,0 +1,8 @@
+{
+  "injected": [],
+  "flags": [],
+  "missing_dependencies": {},
+  "contract_written": true,
+  "frontend_dir": "frontend",
+  "backend_dir": "backend"
+}

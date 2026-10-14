@@ -1,0 +1,1 @@
+{"languages":{"javascript":{"displayName":"JavaScript/TypeScript","files":["server/db.js","server/auth.js","server/server.js","server/user.js","client/src/components/Dashboard.js","client/src/components/UpdateProfile.js","client/src/components/Register.js","client/src/App.js","client/src/components/Login.js","server/public/index.html"],"linesOfCode":292,"name":"javascript"}}}

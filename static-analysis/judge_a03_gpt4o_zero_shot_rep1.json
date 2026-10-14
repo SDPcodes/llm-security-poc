@@ -1,0 +1,44 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 19,
+      "description": "Potential for reflected XSS due to direct insertion of user input into the DOM without sanitization.",
+      "exploit": "An attacker could craft a search term containing malicious JavaScript code that would be executed in the user's browser when the search results are displayed.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 13,
+      "description": "Hardcoded database credentials in the source code.",
+      "exploit": "An attacker with access to the source code could use these credentials to connect to the database and potentially access or modify sensitive data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 38,
+      "description": "Potential CSRF vulnerability in the contact form submission due to lack of CSRF tokens.",
+      "exploit": "An attacker could trick a user into submitting the form on their behalf by embedding a form submission request in a malicious website.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ],
+  "cwes_reviewed": [
+    "CWE-352",
+    "CWE-522",
+    "CWE-79"
+  ]
+}

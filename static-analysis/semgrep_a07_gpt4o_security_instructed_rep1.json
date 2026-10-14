@@ -1,0 +1,422 @@
+{
+  "version": "1.179.0",
+  "results": [
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/Dashboard.js",
+      "start": {
+        "line": 14,
+        "col": 9,
+        "offset": 391
+      },
+      "end": {
+        "line": 14,
+        "col": 41,
+        "offset": 423
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/Login.js",
+      "start": {
+        "line": 22,
+        "col": 7,
+        "offset": 458
+      },
+      "end": {
+        "line": 22,
+        "col": 32,
+        "offset": 483
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/Login.js",
+      "start": {
+        "line": 24,
+        "col": 7,
+        "offset": 513
+      },
+      "end": {
+        "line": 24,
+        "col": 28,
+        "offset": 534
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/Register.js",
+      "start": {
+        "line": 23,
+        "col": 7,
+        "offset": 458
+      },
+      "end": {
+        "line": 23,
+        "col": 39,
+        "offset": 490
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/Register.js",
+      "start": {
+        "line": 25,
+        "col": 7,
+        "offset": 520
+      },
+      "end": {
+        "line": 25,
+        "col": 35,
+        "offset": 548
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/UpdateProfile.js",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 514
+      },
+      "end": {
+        "line": 20,
+        "col": 41,
+        "offset": 546
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/UpdateProfile.js",
+      "start": {
+        "line": 38,
+        "col": 7,
+        "offset": 870
+      },
+      "end": {
+        "line": 38,
+        "col": 44,
+        "offset": 907
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "client/src/components/UpdateProfile.js",
+      "start": {
+        "line": 40,
+        "col": 7,
+        "offset": 937
+      },
+      "end": {
+        "line": 40,
+        "col": 40,
+        "offset": 970
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.security.audit.sqli.node-postgres-sqli",
+      "path": "server/db.js",
+      "start": {
+        "line": 10,
+        "col": 39,
+        "offset": 202
+      },
+      "end": {
+        "line": 10,
+        "col": 43,
+        "offset": 206
+      },
+      "extra": {
+        "message": "Detected string concatenation with a non-literal variable in a node-postgres JS SQL statement. This could lead to SQL injection if the variable is user-controlled and not properly sanitized. In order to prevent SQL injection, use parameterized queries or prepared statements instead. You can use parameterized statements like so: `client.query('SELECT $1 from table', [userinput])`",
+        "metadata": {
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "references": [
+            "https://node-postgres.com/features/queries"
+          ],
+          "category": "security",
+          "technology": [
+            "node-postgres"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "LOW"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.express.security.audit.express-check-csurf-middleware-usage",
+      "path": "server/server.js",
+      "start": {
+        "line": 9,
+        "col": 7,
+        "offset": 233
+      },
+      "end": {
+        "line": 9,
+        "col": 22,
+        "offset": 248
+      },
+      "extra": {
+        "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+        "metadata": {
+          "category": "security",
+          "references": [
+            "https://www.npmjs.com/package/csurf",
+            "https://www.npmjs.com/package/csrf",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+          ],
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "technology": [
+            "javascript",
+            "typescript",
+            "express"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW"
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      "client/package.json",
+      "client/src/App.js",
+      "client/src/components/Dashboard.js",
+      "client/src/components/Login.js",
+      "client/src/components/Register.js",
+      "client/src/components/UpdateProfile.js",
+      "contract.json",
+      "database.sql",
+      "scaffold_report.json",
+      "server/.env",
+      "server/auth.js",
+      "server/db.js",
+      "server/package.json",
+      "server/public/index.html",
+      "server/server.js",
+      "server/user.js"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.9058830738067627,
+    "profiling_times": {
+      "config_time": 50.775694608688354,
+      "core_time": 33.63468384742737,
+      "ignores_time": 0.0006592273712158203,
+      "total_time": 84.48144054412842
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 2.7317585945129395,
+      "per_file_time": {
+        "mean": 0.10506763825049763,
+        "std_dev": 0.10464134801935242
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.6188002854991863,
+        "count_ratio": 0.038461538461538464
+      },
+      "very_slow_files": [
+        {
+          "fpath": "server/user.js",
+          "ftime": 1.690412998199463
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9362113402061856,
+      "rules_selected_ratio": 0.08311855670103092,
+      "rules_matched_ratio": 0.08311855670103092
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 239334784
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

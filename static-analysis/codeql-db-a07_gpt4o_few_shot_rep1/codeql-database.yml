@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/a07_gpt4o_few_shot_rep1_files
+baselineLinesOfCode: 180
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-14T11:38:05.264701084Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true

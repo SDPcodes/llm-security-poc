@@ -1,0 +1,23 @@
+{
+  "injected": [],
+  "flags": [],
+  "missing_dependencies": {
+    "backend": [
+      "axios",
+      "bcrypt",
+      "cors",
+      "csurf",
+      "dotenv",
+      "express",
+      "express-rate-limit",
+      "helmet",
+      "jsonwebtoken",
+      "pg",
+      "react",
+      "react-dom"
+    ]
+  },
+  "contract_written": true,
+  "frontend_dir": "frontend",
+  "backend_dir": "."
+}
