@@ -1,0 +1,55 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 17,
+      "description": "CSRF protection is implemented using the csurf middleware, but it relies on cookies. If the application does not set the 'SameSite' attribute for cookies, it may be vulnerable to CSRF attacks.",
+      "exploit": "An attacker could trick a user into making unwanted requests to the application by exploiting the lack of 'SameSite' attribute on cookies.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 28,
+      "description": "The application fetches URLs provided by the user without proper validation, leading to potential SSRF (Server-Side Request Forgery) vulnerabilities.",
+      "exploit": "An attacker could provide a URL pointing to an internal service or a malicious server, potentially gaining access to sensitive data or causing a denial of service.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 38,
+      "description": "The application uses parameterized queries to prevent SQL injection, but the table name is hardcoded, which could be a potential risk if not properly managed.",
+      "exploit": "If an attacker can manipulate the table name through other means, they might be able to perform SQL injection attacks.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 43,
+      "description": "The error message returned to the client is generic and does not expose sensitive information, but it could be improved to provide more context for debugging without revealing sensitive data.",
+      "exploit": "An attacker could use the generic error message to infer the existence of certain vulnerabilities or endpoints.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-89",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-352",
+    "CWE-918"
+  ]
+}

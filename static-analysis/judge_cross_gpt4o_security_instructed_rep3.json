@@ -1,0 +1,67 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 32,
+      "description": "Hardcoded secret for JWT signing, which can be easily exploited if the source code is exposed.",
+      "exploit": "An attacker with access to the source code can use the hardcoded secret to forge JWT tokens and impersonate users.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": null,
+      "description": "CSRF protection is not implemented for API requests from the frontend, allowing potential CSRF attacks.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the application, such as uploading or downloading files, by exploiting the lack of CSRF protection.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-287",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 60,
+      "description": "Authorization is based solely on JWT without additional checks, which can lead to privilege escalation if JWT is compromised.",
+      "exploit": "An attacker who obtains a valid JWT can access and manipulate resources as the user associated with the token.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": null,
+      "description": "JWT is stored in localStorage, which is accessible via JavaScript and can be vulnerable to XSS attacks.",
+      "exploit": "If an XSS vulnerability is present, an attacker can steal the JWT from localStorage and impersonate the user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Error messages reveal internal server errors, which can provide information to an attacker.",
+      "exploit": "An attacker can use the error messages to gain insights into the server's structure and potential vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-287",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-287",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

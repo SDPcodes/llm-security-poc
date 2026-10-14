@@ -1,0 +1,13 @@
+{
+  "task": "a10",
+  "port": 5000,
+  "api_base": "/api",
+  "_needs_review": true,
+  "a10": {
+    "preview": {
+      "path": "/preview",
+      "field": "url"
+    }
+  },
+  "auth_header": "none"
+}

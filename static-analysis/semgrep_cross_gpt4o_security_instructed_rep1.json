@@ -1,0 +1,156 @@
+{
+  "version": "1.179.0",
+  "results": [
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "frontend/src/components/Dashboard.js",
+      "start": {
+        "line": 30,
+        "col": 7,
+        "offset": 754
+      },
+      "end": {
+        "line": 30,
+        "col": 42,
+        "offset": 789
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "workspaces.llm-security-poc..tooling.semgrep-rules.javascript.lang.best-practice.javascript-alert",
+      "path": "frontend/src/components/Login.js",
+      "start": {
+        "line": 20,
+        "col": 7,
+        "offset": 619
+      },
+      "end": {
+        "line": 20,
+        "col": 35,
+        "offset": 647
+      },
+      "extra": {
+        "message": "found alert() call; should this be in production code?",
+        "metadata": {
+          "category": "best-practice",
+          "technology": [
+            "javascript"
+          ]
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".env",
+      "backend/package.json",
+      "backend/server.js",
+      "contract.json",
+      "frontend/package.json",
+      "frontend/public/index.html",
+      "frontend/src/App.js",
+      "frontend/src/components/Dashboard.js",
+      "frontend/src/components/Login.js",
+      "frontend/src/index.js",
+      "scaffold_report.json",
+      "schema.sql"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 2.167724847793579,
+    "profiling_times": {
+      "config_time": 53.667803049087524,
+      "core_time": 83.54082679748535,
+      "ignores_time": 0.0008912086486816406,
+      "total_time": 137.30035400390625
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 2.6461479663848877,
+      "per_file_time": {
+        "mean": 0.14700822035471597,
+        "std_dev": 0.14669099239168773
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.6219137850581178,
+        "count_ratio": 0.05555555555555555
+      },
+      "very_slow_files": [
+        {
+          "fpath": "backend/server.js",
+          "ftime": 1.6456758975982666
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9366359447004609,
+      "rules_selected_ratio": 0.0956221198156682,
+      "rules_matched_ratio": 0.0956221198156682
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 246802496
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

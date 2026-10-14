@@ -135,6 +135,9 @@ def _draft_contract(backend: Path | None, task: str = "a07") -> dict:
 def doctor(app_dir, title="App", task="a07") -> dict:
     app = Path(app_dir)
     rep = {"injected": [], "flags": [], "missing_dependencies": {}, "contract_written": False}
+    if not app.is_dir() or not any(app.rglob("*")):
+        rep["flags"].append("no extracted files — extraction produced nothing for this sample")
+        return rep
 
     def add(path, content, tier, reason):
         dest = app / path

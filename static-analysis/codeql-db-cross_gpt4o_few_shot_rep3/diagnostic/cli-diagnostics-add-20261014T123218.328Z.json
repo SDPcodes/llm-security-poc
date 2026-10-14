@@ -1,0 +1,1 @@
+{"timestamp":"2026-10-14T12:32:18.317639243Z","source":{"id":"cli/database/create","name":"CodeQL CLI: database create"},"plaintextMessage":"A fatal error occurred: Invalid source root: /workspaces/llm-security-poc/generated-code/cross_gpt4o_few_shot_rep3_files.","severity":"error","visibility":{"telemetry":false},"attributes":{"exitCode":2}}

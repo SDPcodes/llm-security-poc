@@ -1,0 +1,21 @@
+{
+  "name": "url-preview-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.3.0",
+    "helmet": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "validator": "^13.7.0"
+  }
+}

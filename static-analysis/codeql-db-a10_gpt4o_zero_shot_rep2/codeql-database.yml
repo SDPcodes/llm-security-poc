@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/a10_gpt4o_zero_shot_rep2_files
+baselineLinesOfCode: 87
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-14T12:42:24.536963537Z
+finalised: true
+overlayBaseDatabase: false
+overlayDatabase: false

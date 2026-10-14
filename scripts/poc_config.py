@@ -15,14 +15,14 @@ MODELS = {
         "base_url": None,                       # default OpenAI endpoint
         "api_key_env": "OPENAI_API_KEY",
         "temperature": 0.7,
-        "max_tokens": 8000,
+        "max_tokens": 16000,
     },
     "deepseek": {                               # DeepSeek-Coder lineage, OpenAI-compatible
         "model": "deepseek-chat",
         "base_url": "https://api.deepseek.com/v1",
         "api_key_env": "DEEPSEEK_API_KEY",
         "temperature": 0.7,
-        "max_tokens": 8000,
+        "max_tokens": 16000,
     },
 }
 

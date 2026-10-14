@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/cross_gpt4o_few_shot_rep2_files
+baselineLinesOfCode: 139
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-14T13:02:08.527542343Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true

@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS url_logs (
+  id SERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  title TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);

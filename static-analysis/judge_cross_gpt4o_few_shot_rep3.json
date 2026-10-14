@@ -1,0 +1,80 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Sensitive information such as JWT_SECRET is being used directly from environment variables without any additional security measures.",
+      "exploit": "An attacker with access to the environment variables can retrieve the JWT_SECRET and forge JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 23,
+      "description": "The JWT token is included in the response body, which can be intercepted if the connection is not secure.",
+      "exploit": "An attacker intercepting the response can retrieve the JWT token and impersonate the user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 30,
+      "description": "The application does not implement CSRF protection for state-changing requests.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the server by exploiting the user's active session.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 56,
+      "description": "The application returns detailed error messages that may reveal sensitive information about the server.",
+      "exploit": "An attacker can use the error messages to gain insights into the server's structure and potential vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 46,
+      "description": "The file upload functionality does not validate the file type, which could lead to SSRF if an attacker uploads a malicious file.",
+      "exploit": "An attacker can upload a malicious file that, when processed, makes unauthorized requests to internal services.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 50,
+      "description": "The application does not enforce strict access control on file downloads, allowing users to potentially access files they do not own.",
+      "exploit": "An attacker can manipulate the file ID in the download URL to access files belonging to other users.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-918"
+  ]
+}

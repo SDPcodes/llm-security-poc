@@ -1,0 +1,92 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 28,
+      "description": "Hardcoded secret key for JWT token signing.",
+      "exploit": "An attacker with access to the source code can use the hardcoded secret key to forge JWT tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 22,
+      "description": "Hardcoded database credentials.",
+      "exploit": "An attacker with access to the source code can use the hardcoded credentials to access the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "No CSRF protection on state-changing endpoints.",
+      "exploit": "An attacker can trick a user into making unwanted requests to the server by exploiting the lack of CSRF protection.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Error messages reveal sensitive information.",
+      "exploit": "An attacker can use error messages to gain information about the system, such as the existence of certain users.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Lack of role-based access control for file upload and download.",
+      "exploit": "An attacker can exploit this to upload or download files they should not have access to.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Potential SSRF vulnerability in file download functionality.",
+      "exploit": "An attacker can manipulate the file path to access internal resources.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-116",
+      "severity": "LOW",
+      "file": "frontend/src/FileUploadPage.js",
+      "line": null,
+      "description": "Lack of output encoding for file names.",
+      "exploit": "An attacker can upload a file with a name containing HTML/JavaScript code, potentially leading to XSS when the file name is displayed.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-116",
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-116",
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798",
+    "CWE-918"
+  ]
+}

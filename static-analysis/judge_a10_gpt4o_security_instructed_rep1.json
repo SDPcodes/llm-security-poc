@@ -1,0 +1,55 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 24,
+      "description": "Server-Side Request Forgery (SSRF) vulnerability due to fetching a URL provided by the user without proper validation or restrictions.",
+      "exploit": "An attacker could provide a URL pointing to an internal service or a malicious server, potentially leading to unauthorized access or data exfiltration.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 30,
+      "description": "Potential Cross-Site Scripting (XSS) vulnerability due to directly embedding untrusted data (title and description) into the response without proper escaping.",
+      "exploit": "An attacker could craft a URL that returns a response with malicious JavaScript in the title or description, which could then be executed in the victim's browser.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Sensitive data exposure due to lack of HTTPS enforcement.",
+      "exploit": "An attacker could intercept requests and responses between the client and server if HTTPS is not enforced, potentially capturing sensitive data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "Potential use of hardcoded secrets if environment variables are not properly managed.",
+      "exploit": "If environment variables are not securely managed, an attacker with access to the source code or environment could gain access to sensitive information such as database credentials.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    }
+  ],
+  "cwes": [
+    "CWE-311",
+    "CWE-79",
+    "CWE-798",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-311",
+    "CWE-79",
+    "CWE-918"
+  ]
+}

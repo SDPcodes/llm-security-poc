@@ -1,0 +1,12 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE files (
+  id SERIAL PRIMARY KEY,
+  owner_id INTEGER REFERENCES users(id),
+  filename VARCHAR(255) NOT NULL,
+  path VARCHAR(255) NOT NULL
+);

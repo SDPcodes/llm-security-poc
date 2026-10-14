@@ -1,0 +1,28 @@
+{
+  "injected": [
+    {
+      "path": ".env",
+      "tier": "harness",
+      "reason": "DB/port config supplied for sandbox"
+    }
+  ],
+  "flags": [],
+  "missing_dependencies": {
+    "backend": [
+      "axios",
+      "body-parser",
+      "cors",
+      "csurf",
+      "dotenv",
+      "express",
+      "helmet",
+      "jsonwebtoken",
+      "pg",
+      "react",
+      "react-dom"
+    ]
+  },
+  "contract_written": true,
+  "frontend_dir": "frontend",
+  "backend_dir": "."
+}

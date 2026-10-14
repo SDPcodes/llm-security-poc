@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /workspaces/llm-security-poc/generated-code/cross_gpt4o_security_instructed_rep1_files
+baselineLinesOfCode: 222
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  cliVersion: 2.27.2
+  creationTime: 2026-10-14T12:55:12.919889856Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true

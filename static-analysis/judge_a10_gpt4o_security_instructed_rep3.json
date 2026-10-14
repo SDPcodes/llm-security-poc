@@ -1,0 +1,55 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 29,
+      "description": "The application fetches data from a URL provided by the user without proper validation, which can lead to Server-Side Request Forgery (SSRF).",
+      "exploit": "An attacker can provide a URL pointing to an internal service or a sensitive endpoint, potentially accessing unauthorized data or causing unintended actions.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 10,
+      "description": "The application uses environment variables for configuration, but there is no indication that sensitive data like JWT secrets are securely managed.",
+      "exploit": "If the environment variables are not properly secured, an attacker with access to the environment can extract sensitive information like database credentials or JWT secrets.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 17,
+      "description": "The application uses CSRF protection, but it relies on cookies, which may not be sufficient if the application is not configured to use SameSite cookies or if CORS is misconfigured.",
+      "exploit": "An attacker could exploit a CSRF vulnerability if the CSRF token is not properly validated or if the cookie settings are not secure.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 38,
+      "description": "The SQL query uses parameterized queries, which mitigates SQL injection risks. However, if other parts of the application do not use parameterized queries, they may be vulnerable.",
+      "exploit": "If parameterized queries are not consistently used throughout the application, an attacker could exploit SQL injection vulnerabilities by injecting malicious SQL code.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    }
+  ],
+  "cwes": [
+    "CWE-352",
+    "CWE-522",
+    "CWE-89",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-352",
+    "CWE-522",
+    "CWE-918"
+  ]
+}

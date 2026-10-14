@@ -64,6 +64,31 @@ def json_manifest(text: str) -> dict[str, str] | None:
     return None
 
 
+def salvage_json_files(text: str) -> dict[str, str]:
+    """Recover every complete {"path","content"} object, even if the surrounding
+    manifest is truncated (model hit max_tokens mid-array). Each object parses on
+    its own, so a cut-off tail just drops the last, incomplete file."""
+    dec = json.JSONDecoder()
+    out: dict[str, str] = {}
+    i, n = 0, len(text)
+    while i < n:
+        j = text.find("{", i)
+        if j < 0:
+            break
+        try:
+            obj, end = dec.raw_decode(text, j)
+        except json.JSONDecodeError:
+            i = j + 1
+            continue
+        if isinstance(obj, dict) and "path" in obj and "content" in obj:
+            sp = safe_relpath(str(obj["path"]))
+            if sp:
+                out[sp] = obj["content"] if isinstance(obj["content"], str) \
+                    else json.dumps(obj["content"], indent=2)
+        i = end
+    return out
+
+
 # ---------- structure-tree parsing (for the markdown fallback) ----------
 _FENCE = re.compile(r"^([ \t]*)```([A-Za-z0-9+#.\-]*)\s*$")
 
@@ -206,8 +231,16 @@ def extract_files(raw: str) -> tuple[dict[str, str], dict]:
     if files:
         report["method"] = "json_manifest"
     else:
-        files, warnings = markdown_fallback(raw)
-        report["method"] = "markdown_fallback"
+        md_files, warnings = markdown_fallback(raw)
+        salvaged = salvage_json_files(raw)          # handles truncated manifests
+        if len(salvaged) >= len(md_files):
+            files, report["method"] = salvaged, "json_salvage"
+            if salvaged:
+                warnings.append("recovered %d file(s) from a truncated/invalid JSON manifest "
+                                "(the last file may be incomplete — consider raising max_tokens)"
+                                % len(salvaged))
+        else:
+            files, report["method"] = md_files, "markdown_fallback"
         report["warnings"] = warnings
     report["n_files"] = len(files)
     report["paths"] = sorted(files)
@@ -216,6 +249,7 @@ def extract_files(raw: str) -> tuple[dict[str, str], dict]:
 
 def write_files(files: dict[str, str], out_dir) -> None:
     out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)          # always create the dir, even for 0 files
     for path, content in files.items():
         dest = out / path
         dest.parent.mkdir(parents=True, exist_ok=True)

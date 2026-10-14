@@ -1,0 +1,34 @@
+{
+  "task": "cross",
+  "port": 3000,
+  "api_base": "/api",
+  "auth_header": "cookie",
+  "_needs_review": true,
+  "auth": {
+    "register": {
+      "path": "/register",
+      "body": [
+        "username",
+        "email",
+        "password"
+      ]
+    },
+    "login": {
+      "path": "/login",
+      "body": [
+        "email",
+        "password"
+      ],
+      "token_field": "token"
+    }
+  },
+  "cross": {
+    "upload": {
+      "path": "/files",
+      "field": "file"
+    },
+    "list": "/files",
+    "download": "/files/{id}/download",
+    "id_field": "id"
+  }
+}

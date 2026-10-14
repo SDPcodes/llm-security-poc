@@ -164,37 +164,44 @@
   "a10_gpt4o_zero_shot_rep1": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_zero_shot_rep1_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_zero_shot_rep2": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_zero_shot_rep2_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_zero_shot_rep3": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_zero_shot_rep3_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_security_instructed_rep1": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_security_instructed_rep1_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_security_instructed_rep2": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_security_instructed_rep2_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_security_instructed_rep3": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_security_instructed_rep3_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_few_shot_rep1": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/a10_gpt4o_few_shot_rep1_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "a10_gpt4o_few_shot_rep2": {
     "generate": "ok",
@@ -223,36 +230,43 @@
   "cross_gpt4o_zero_shot_rep3": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_zero_shot_rep3_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "cross_gpt4o_security_instructed_rep1": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_security_instructed_rep1_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "cross_gpt4o_security_instructed_rep2": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_security_instructed_rep2_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "cross_gpt4o_security_instructed_rep3": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_security_instructed_rep3_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "cross_gpt4o_few_shot_rep1": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_few_shot_rep1_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "cross_gpt4o_few_shot_rep2": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_few_shot_rep2_files'"
+    "scaffold": "ok",
+    "static": "ok"
   },
   "cross_gpt4o_few_shot_rep3": {
     "generate": "ok",
     "extract": "ok",
-    "scaffold": "ERR: [Errno 2] No such file or directory: '/workspaces/llm-security-poc/generated-code/cross_gpt4o_few_shot_rep3_files'"
+    "scaffold": "ok",
+    "static": "ok"
   }
 }

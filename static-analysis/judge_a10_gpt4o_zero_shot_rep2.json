@@ -1,0 +1,55 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-352",
+      "severity": "HIGH",
+      "file": "frontend/src/App.js",
+      "line": 13,
+      "description": "The application does not implement any CSRF protection mechanism, making it vulnerable to Cross-Site Request Forgery attacks.",
+      "exploit": "An attacker could trick a user into visiting a malicious website that makes a POST request to 'http://localhost:5000/api/preview' with the user's credentials, potentially causing unwanted actions on behalf of the user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "CRITICAL",
+      "file": "backend/server.js",
+      "line": 14,
+      "description": "The application fetches URLs provided by the user without validation, making it vulnerable to Server-Side Request Forgery (SSRF).",
+      "exploit": "An attacker could provide a URL pointing to an internal service or a sensitive endpoint, causing the server to make requests to internal resources that should not be accessible.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Hardcoded database credentials are present in the source code, which can lead to unauthorized access if the code is exposed.",
+      "exploit": "If an attacker gains access to the source code, they can use the hardcoded credentials to connect to the database and potentially extract or manipulate sensitive data.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-116",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 16,
+      "description": "The application directly inserts user-provided URLs into the database without proper validation or sanitization, which could lead to injection attacks.",
+      "exploit": "An attacker could provide a specially crafted URL that includes SQL injection payloads or other malicious content, potentially leading to data corruption or unauthorized data access.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-116",
+    "CWE-352",
+    "CWE-798",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-116",
+    "CWE-352",
+    "CWE-918"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "Hardcoded secret in environment variable configuration.",
+      "exploit": "If an attacker gains access to the environment configuration, they can use the JWT secret to forge tokens.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 37,
+      "description": "JWT token is set with 'secure: true', which is good, but if the application is accessed over HTTP, it could be exposed.",
+      "exploit": "If the application is accessed over HTTP instead of HTTPS, the token could be intercepted by an attacker.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 18,
+      "description": "CSRF protection is implemented using 'csurf', but the configuration might not be sufficient if the application is not using HTTPS.",
+      "exploit": "An attacker could potentially perform CSRF attacks if the application is accessed over HTTP.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 41,
+      "description": "Error messages reveal internal server errors which can be used for information gathering.",
+      "exploit": "An attacker can use the error messages to gain insights into the server's structure and potential vulnerabilities.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "frontend/src/components/Login.js",
+      "line": 20,
+      "description": "Sensitive data (username and password) is sent over the network without explicit HTTPS enforcement.",
+      "exploit": "An attacker could intercept the login credentials if the application is accessed over an insecure connection.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 74,
+      "description": "Lack of proper access control on file download endpoint.",
+      "exploit": "An authenticated user could attempt to download files they do not own by manipulating the file ID in the URL.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

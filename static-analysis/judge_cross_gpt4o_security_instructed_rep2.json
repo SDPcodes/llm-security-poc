@@ -1,0 +1,103 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-311",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 34,
+      "description": "Sensitive data (JWT secret) is stored in environment variables, which is good practice, but there is no validation to ensure it is set. If the environment variable is missing, the application might crash or behave unexpectedly.",
+      "exploit": "An attacker could exploit this by causing a denial of service if the application crashes due to missing environment variables.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 34,
+      "description": "The JWT secret is stored in an environment variable, which is good practice, but there is no mechanism to rotate the secret periodically.",
+      "exploit": "If the secret is leaked, an attacker could create valid JWTs and impersonate users until the secret is changed.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 41,
+      "description": "CSRF protection is implemented using csurf middleware, but it is only applied to the /api/files endpoint. Other endpoints, such as /api/login, are not protected against CSRF attacks.",
+      "exploit": "An attacker could exploit this by tricking a user into making unwanted requests to the /api/login endpoint, potentially logging them in with an attacker's credentials.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "The file upload functionality does not validate the file type, which could lead to server-side request forgery (SSRF) if an attacker uploads a malicious file that the server processes.",
+      "exploit": "An attacker could upload a file that causes the server to make requests to internal services, potentially accessing sensitive information.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-434",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 48,
+      "description": "The file upload functionality does not validate the file type or size, which could lead to arbitrary file upload vulnerabilities.",
+      "exploit": "An attacker could upload a malicious file, such as a script, and execute it on the server, leading to remote code execution.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 70,
+      "description": "The error messages returned by the server are generic and do not leak sensitive information, but they could be improved to provide more context for legitimate users without revealing implementation details.",
+      "exploit": "An attacker could use the generic error messages to infer the presence of vulnerabilities or misconfigurations.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 92,
+      "description": "The application does not implement proper access control checks for the /api/files/:id/download endpoint, relying solely on the owner_id check. This could allow unauthorized access if the token is compromised.",
+      "exploit": "An attacker with a valid token could download files they do not own by manipulating the file ID in the URL.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-798",
+      "severity": "CRITICAL",
+      "file": "backend/server.js",
+      "line": 34,
+      "description": "The application relies on a hardcoded JWT expiry time ('1h'), which could lead to predictable token expiration and potential replay attacks if tokens are intercepted.",
+      "exploit": "An attacker could exploit this by intercepting a token and using it within the expiration window to impersonate a user.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-434",
+    "CWE-522",
+    "CWE-798",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-311",
+    "CWE-352",
+    "CWE-434",
+    "CWE-522",
+    "CWE-918"
+  ]
+}

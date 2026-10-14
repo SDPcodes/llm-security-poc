@@ -1,0 +1,67 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-798",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 9,
+      "description": "Hardcoded secret in environment variables file. If the .env file is not properly secured, it can lead to exposure of sensitive information such as JWT_SECRET.",
+      "exploit": "An attacker with access to the .env file can read the JWT_SECRET and potentially forge JWT tokens.",
+      "likely_fp": true,
+      "fp_reason": "code reads secret from process.env"
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 37,
+      "description": "Missing CSRF protection on file upload endpoint. The application does not implement any CSRF protection mechanism.",
+      "exploit": "An attacker can trick an authenticated user into making unwanted requests to the file upload endpoint, potentially uploading malicious files.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 27,
+      "description": "Potential information exposure through error messages. The application returns specific error messages that can help an attacker enumerate valid email addresses.",
+      "exploit": "An attacker can use the error messages to determine if an email address is registered in the system by observing the difference between 'Invalid credentials' and 'Missing fields' responses.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "LOW",
+      "file": "backend/server.js",
+      "line": 22,
+      "description": "JWT tokens are stored in cookies without additional encryption. While the cookies are marked as httpOnly and secure, additional encryption could provide an extra layer of security.",
+      "exploit": "If an attacker can access the cookies, they can potentially read the JWT token and impersonate the user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-285",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 45,
+      "description": "Lack of proper access control on file download endpoint. The application checks for file ownership but does not implement additional access control mechanisms.",
+      "exploit": "An attacker who gains access to a valid JWT token can download files owned by the user associated with that token.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522",
+    "CWE-798"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-352",
+    "CWE-522"
+  ]
+}

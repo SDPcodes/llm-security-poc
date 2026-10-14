@@ -1,0 +1,6 @@
+CREATE TABLE url_logs (
+  id SERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  title TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

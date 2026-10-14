@@ -1,0 +1,68 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-918",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 13,
+      "description": "The application fetches URLs provided by the user without validation, leading to potential Server-Side Request Forgery (SSRF).",
+      "exploit": "An attacker could provide a URL pointing to an internal service, potentially accessing sensitive data or causing unwanted actions.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-79",
+      "severity": "MEDIUM",
+      "file": "frontend/src/App.js",
+      "line": 28,
+      "description": "The application displays user-provided data (URL preview) without proper sanitization, which could lead to Cross-Site Scripting (XSS).",
+      "exploit": "An attacker could manipulate the URL to include a script in the title or description, which would execute in the context of the user's browser.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-311",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 6,
+      "description": "The application does not enforce HTTPS, which could lead to sensitive data being transmitted over an insecure connection.",
+      "exploit": "An attacker could intercept HTTP traffic to capture sensitive information such as session tokens or user data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 8,
+      "description": "The application relies on environment variables for database connection strings without ensuring they are securely stored or accessed.",
+      "exploit": "An attacker with access to the environment could extract the database connection string and gain unauthorized access to the database.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 11,
+      "description": "The application lacks Cross-Site Request Forgery (CSRF) protection for the /api/preview endpoint.",
+      "exploit": "An attacker could trick a user into making unwanted requests to the application, potentially causing actions on behalf of the user.",
+      "likely_fp": false,
+      "fp_reason": ""
+    }
+  ],
+  "cwes": [
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-311",
+    "CWE-352",
+    "CWE-522",
+    "CWE-79",
+    "CWE-918"
+  ]
+}

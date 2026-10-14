@@ -1,0 +1,91 @@
+{
+  "raw": [
+    {
+      "cwe": "CWE-311",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 27,
+      "description": "JWT tokens are not transmitted over a secure connection (secure flag is set to false). This can lead to token interception over an unsecured network.",
+      "exploit": "An attacker on the same network could intercept the JWT token if the connection is not secure, leading to session hijacking.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-522",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 22,
+      "description": "Sensitive data such as JWT secret is stored in environment variables without any encryption or additional security measures.",
+      "exploit": "If an attacker gains access to the environment variables, they could potentially use the JWT secret to forge tokens.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-352",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": null,
+      "description": "CSRF protection is not implemented for any of the endpoints, making the application vulnerable to Cross-Site Request Forgery attacks.",
+      "exploit": "An attacker could trick a user into making unwanted requests to the server, such as uploading files or downloading sensitive data.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-200",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 15,
+      "description": "The application returns detailed error messages that could reveal sensitive information about the server configuration or database schema.",
+      "exploit": "An attacker could use the information from error messages to craft more targeted attacks against the application.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-434",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 42,
+      "description": "The file upload functionality does not validate the file type, allowing potentially dangerous files to be uploaded.",
+      "exploit": "An attacker could upload a malicious script or executable file, which could be executed on the server.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-918",
+      "severity": "MEDIUM",
+      "file": "backend/server.js",
+      "line": 56,
+      "description": "The file download functionality does not properly validate the file path, potentially allowing for Server-Side Request Forgery (SSRF) attacks.",
+      "exploit": "An attacker could manipulate the file path to access internal resources or services that are not intended to be exposed.",
+      "likely_fp": false,
+      "fp_reason": ""
+    },
+    {
+      "cwe": "CWE-89",
+      "severity": "HIGH",
+      "file": "backend/server.js",
+      "line": 19,
+      "description": "The SQL queries use parameterized queries, which is good practice, but there is no input validation on the email field before it is used in the query.",
+      "exploit": "An attacker could attempt SQL injection by providing malicious input in the email field, although parameterized queries mitigate this risk.",
+      "likely_fp": true,
+      "fp_reason": "queries appear parameterised ($1/placeholders)"
+    }
+  ],
+  "cwes": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-434",
+    "CWE-522",
+    "CWE-89",
+    "CWE-918"
+  ],
+  "cwes_reviewed": [
+    "CWE-200",
+    "CWE-311",
+    "CWE-352",
+    "CWE-434",
+    "CWE-522",
+    "CWE-918"
+  ]
+}

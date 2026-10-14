@@ -1,0 +1,22 @@
+{
+  "injected": [
+    {
+      "path": ".env",
+      "tier": "harness",
+      "reason": "DB/port config supplied for sandbox"
+    }
+  ],
+  "flags": [],
+  "missing_dependencies": {
+    "backend": [
+      "axios",
+      "express",
+      "pg",
+      "react",
+      "react-dom"
+    ]
+  },
+  "contract_written": true,
+  "frontend_dir": "frontend",
+  "backend_dir": "."
+}
